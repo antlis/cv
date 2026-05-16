@@ -28,8 +28,37 @@ projects:
         url: /showcase/cv-hub
         type: product
 
-  - slug: steam-deck-keyboard
+  - slug: wikinest
     order: 2
+    name: WikiNest
+    role: Автор / Разработчик
+    year: "2026"
+    description: Git-нативная вики для небольших инженерных команд. Браузерный markdown-редактор, где каждое сохранение — это Git-коммит. Никакого сервера, базы данных и сборки. Распространяется одним HTML-файлом.
+    theme: cyan
+    featured: true
+    platforms: [Веб, GitHub Pages, GitLab Pages]
+    tags: [open-source, wiki, markdown, git, no-build, static]
+    stack: [HTML, CSS, GitHub API, GitLab API]
+    metrics:
+      - label: Зависимости
+        value: "Ноль"
+      - label: Настройка
+        value: "2 минуты"
+      - label: Хранилище
+        value: "Git репо"
+    links:
+      - label: GitHub
+        url: https://github.com/KeeGooRoomiE/wikinest
+        type: repo
+      - label: Демо
+        url: https://keegooroomie.github.io/wikinest
+        type: demo
+      - label: Подробнее
+        url: /showcase/wikinest
+        type: product
+
+  - slug: steam-deck-keyboard
+    order: 3
     name: Steam Deck Custom Keyboard
     role: Создатель / Мейнтейнер
     year: "2025"
