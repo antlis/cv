@@ -102,6 +102,244 @@ blocks:
   - type: divider
 
   - type: text
+    title: "System Model"
+    body: |
+      WikiNest is intentionally designed around an inversion of the typical wiki architecture.
+
+      Traditional documentation systems introduce a dedicated backend layer: application server, database, authentication service, search infrastructure, deployment pipeline. WikiNest removes that entire layer and treats existing Git infrastructure as the platform itself.
+
+      The resulting system model looks like this:
+
+      - Git repository → canonical database
+      - GitHub/GitLab API → persistence and write layer
+      - GitHub Pages / GitLab Pages → hosting runtime
+      - CI pipelines → asynchronous indexing system
+      - Browser → application runtime
+      - localStorage → ephemeral session cache
+
+      The browser effectively operates as a distributed client for a Git-backed document store.
+
+      This changes the operational model completely. There is no server lifecycle, no database maintenance, no migrations, no runtime orchestration and no infrastructure ownership beyond the repository itself.
+
+      The repository is the system.
+
+  - type: divider
+
+  - type: text
+    title: "Why No Backend"
+    body: |
+      The absence of a backend is not a missing feature — it is the core architectural constraint the entire project is built around.
+
+      The goal was to answer a specific question:
+
+      "How much collaborative documentation infrastructure can be replaced with Git itself?"
+
+      Git already provides:
+
+      - Version history
+      - Concurrency model
+      - Rollback
+      - Audit trail
+      - Access control
+      - Replication
+      - Hosting
+      - Review workflows
+      - Deployment pipelines
+
+      Most wiki platforms rebuild these concepts inside their own application stack. WikiNest instead treats Git as the native storage and collaboration layer from the beginning.
+
+      This has significant consequences:
+
+      - No infrastructure provisioning
+      - No operational maintenance
+      - No deployment complexity
+      - No proprietary data layer
+      - No vendor lock-in
+      - No synchronization system between the wiki and Git
+
+      The trade-off is equally intentional: the architecture prioritises transparency, portability and operational simplicity over enterprise collaboration features.
+
+  - type: divider
+
+  - type: text
+    title: "Provider Abstraction"
+    body: |
+      One of the more important engineering goals was avoiding tight coupling to a single Git platform.
+
+      WikiNest supports both GitHub and GitLab through a normalized provider layer that abstracts differences between their REST APIs.
+
+      Internally, operations like:
+
+      - file reads
+      - file writes
+      - deletes
+      - commit history
+      - pipeline status
+      - raw file access
+
+      are converted into provider-agnostic operations.
+
+      GitHub and GitLab expose different API shapes, authentication mechanisms and pipeline systems. WikiNest normalizes these into a shared internal model so the rest of the application can operate independently of the provider.
+
+      For example:
+
+      - GitHub uses `PUT /contents/{path}` while GitLab separates create/update into `POST` and `PUT`
+      - GitHub Actions and GitLab Pipelines return different deployment payloads
+      - GitLab uses `last_commit_id` where GitHub exposes blob SHAs directly
+
+      The application hides these differences behind a thin API layer while preserving the same UX and deployment flow.
+
+  - type: divider
+
+  - type: text
+    title: "Consistency Model"
+    body: |
+      WikiNest intentionally operates as an eventually consistent system.
+
+      Raw CDN endpoints on both GitHub and GitLab cache markdown files aggressively, typically for 30–60 seconds. After a save, the latest repository state may not be immediately visible through the CDN even though the commit already exists.
+
+      Instead of fighting this behavior, the application is designed around it.
+
+      After a save:
+
+      - The editor immediately renders the local version of the document
+      - The sidebar updates optimistically without waiting for CI
+      - A deploy watcher tracks the latest CI run
+      - `tree.json` and `search.json` reload only after deployment succeeds
+
+      This creates a workflow that feels responsive while still remaining fully static and backendless.
+
+      Conflict detection is handled structurally through Git SHAs. Every write operation includes the currently known file SHA. If another edit lands first, the provider rejects the write automatically.
+
+      In practice, Git itself becomes the concurrency control system.
+
+  - type: divider
+
+  - type: text
+    title: "Search Architecture"
+    body: |
+      Full-text search is implemented without any dedicated search infrastructure.
+
+      On every push, CI walks the `docs/` directory and generates two static artifacts:
+
+      - `tree.json` → page metadata, hierarchy, excerpts and timestamps
+      - `search.json` → flat full-text index of raw markdown content
+
+      The frontend fetches `search.json` lazily on first search open instead of during initial page load. This keeps startup lightweight even for larger documentation repositories.
+
+      Search itself is entirely client-side.
+
+      This architecture deliberately shifts indexing cost into CI instead of runtime. The browser receives a precomputed static index and performs instant in-memory search with zero backend dependency.
+
+      The trade-off is that search indexing is asynchronous and trails writes by roughly one deployment cycle.
+
+  - type: divider
+
+  - type: text
+    title: "Security Model"
+    body: |
+      WikiNest uses a deliberately lightweight security model designed for internal engineering documentation rather than enterprise zero-trust environments.
+
+      Editing requires three separate conditions:
+
+      - Repository write access
+      - Valid Personal Access Token
+      - Local edit password
+
+      The Personal Access Token is never stored server-side because there is no server.
+
+      Instead:
+
+      - The token is stored in localStorage
+      - If an edit password is configured, the token is XOR-obfuscated with the password before storage
+      - The token is decrypted only after the correct password is entered
+      - The decrypted token lives only in runtime memory for the session duration
+
+      This is intentionally described as obfuscation rather than strong cryptographic protection.
+
+      The goal is not enterprise-grade secret management. The goal is avoiding accidental plaintext exposure while preserving the zero-backend architecture.
+
+      The project also hardens several browser-side attack surfaces:
+
+      - User-controlled strings are escaped before HTML interpolation
+      - Dynamic UI elements use DOM APIs instead of inline HTML construction
+      - Path validation prevents traversal sequences in file operations
+      - External CDN scripts use Subresource Integrity hashes
+
+      The main acknowledged architectural limitation is markdown rendering itself. User-authored markdown is rendered client-side through `marked.js`, meaning repository compromise could theoretically introduce malicious content.
+
+      For the target use-case — small engineering teams operating inside trusted repositories — this trade-off was considered acceptable.
+
+  - type: divider
+
+  - type: text
+    title: "Operational Philosophy"
+    body: |
+      WikiNest is intentionally optimized around operational minimalism.
+
+      Modern documentation systems often accumulate infrastructure gradually:
+
+      database → auth → object storage → deployment pipeline → search service → background jobs → backups → monitoring
+
+      Eventually the documentation platform itself becomes another production service.
+
+      WikiNest deliberately moves in the opposite direction.
+
+      The entire system is:
+
+      - one HTML file
+      - one CSS file
+      - one repository
+      - static hosting
+      - provider APIs
+      - CI-generated metadata
+
+      No package manager. No runtime dependencies beyond one CDN markdown parser. No server process. No containers.
+
+      The result is a tool that is unusually transparent operationally:
+
+      - Every page is a normal markdown file
+      - Every edit is a normal Git commit
+      - Every deployment is a normal Pages deployment
+      - Every failure mode is inspectable through standard Git tooling
+
+      A new engineer can realistically understand the entire system in a single afternoon.
+
+  - type: divider
+
+  - type: text
+    title: "Engineering Constraints"
+    body: |
+      Several technical constraints shaped the project heavily:
+
+      - No framework runtime
+      - No build step
+      - No server-side execution
+      - No external database
+      - No bundler
+      - No dependency graph
+
+      These constraints forced the architecture toward explicit simplicity.
+
+      Features that are often hidden behind framework abstractions had to be implemented directly:
+
+      - optimistic UI updates
+      - debounced rendering
+      - split-view editor synchronization
+      - provider API normalization
+      - CI deployment tracking
+      - markdown parsing pipeline
+      - wiki-link autocomplete
+      - tree rendering from flat structures
+      - offline draft persistence
+
+      This constraint-driven approach kept the codebase extremely small while still supporting collaborative editing, search, version history and deployment feedback.
+
+      The final application remains close to ~1000 lines of vanilla HTML, CSS and JavaScript.
+
+  - type: divider
+
+  - type: text
     title: "Engineering Decisions"
     bullets:
       - No framework — vanilla JS keeps the bundle size at zero and eliminates dependency drift entirely
