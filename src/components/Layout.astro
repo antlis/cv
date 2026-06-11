@@ -132,10 +132,16 @@ const authorGitHubPage = 'https://github.com/KeeGooRoomiE/';
 
           {profileLinks.length > 1 && (
             <div class="dropdown">
-              <button class="dropdown__trigger" class:list={[{ active: true }]}>
+              <button
+                class="dropdown__trigger"
+                type="button"
+                aria-haspopup="true"
+                aria-expanded="false"
+                aria-controls="role-menu"
+              >
                 {t('nav.role')} ▾
               </button>
-              <ul class="dropdown__menu">
+              <ul class="dropdown__menu" id="role-menu">
                 {profileLinks.map(p => (
                   <li>
                     <a href={p.href} class={p.active ? 'active' : ''}>
@@ -165,31 +171,42 @@ const authorGitHubPage = 'https://github.com/KeeGooRoomiE/';
     <script>
       // Dropdown: click-toggle + click-outside to close.
       // Pure CSS :hover закрывает меню при малейшем выходе курсора за контейнер.
+      // Sync aria-expanded with open state for screen readers.
+      const setExpanded = (dropdown: Element, open: boolean) => {
+        dropdown.querySelector('.dropdown__trigger')?.setAttribute('aria-expanded', String(open));
+      };
+
+      const closeAll = () => {
+        document.querySelectorAll('.dropdown.is-open').forEach(d => {
+          d.classList.remove('is-open');
+          setExpanded(d, false);
+        });
+      };
+
       document.querySelectorAll<HTMLElement>('.dropdown').forEach(dropdown => {
         const trigger = dropdown.querySelector<HTMLElement>('.dropdown__trigger');
         if (!trigger) return;
 
         trigger.addEventListener('click', e => {
           e.stopPropagation();
-          const isOpen = dropdown.classList.contains('is-open');
-          // Закрываем все остальные дропдауны
-          document.querySelectorAll('.dropdown.is-open').forEach(d => d.classList.remove('is-open'));
-          if (!isOpen) dropdown.classList.add('is-open');
+          const willOpen = !dropdown.classList.contains('is-open');
+          closeAll();
+          if (willOpen) {
+            dropdown.classList.add('is-open');
+            setExpanded(dropdown, true);
+          }
         });
       });
 
       // Клик вне любого дропдауна — закрываем все
-      document.addEventListener('click', () => {
-        document.querySelectorAll('.dropdown.is-open').forEach(d => d.classList.remove('is-open'));
-      });
+      document.addEventListener('click', () => closeAll());
 
       // Escape — закрываем все и возвращаем фокус на триггер
       document.addEventListener('keydown', e => {
         if (e.key !== 'Escape') return;
-        document.querySelectorAll<HTMLElement>('.dropdown.is-open').forEach(dropdown => {
-          dropdown.classList.remove('is-open');
-          dropdown.querySelector<HTMLElement>('.dropdown__trigger')?.focus();
-        });
+        const open = document.querySelector<HTMLElement>('.dropdown.is-open .dropdown__trigger');
+        closeAll();
+        open?.focus();
       });
     </script>
 
