@@ -74,6 +74,8 @@ en_gamedev.yaml  ← GameDev delta
 
 Adding a new profile: create a delta YAML → `merge.mjs` picks it up automatically → documents generated, routes built, download links updated. No code changes required.
 
+**Invariant:** a profile's `slug` (routing/URL) must equal its `spec` (CV-file and download key). `merge.mjs` enforces this with a fail-fast guard, so a profile's page can never silently desync from its CV and downloads.
+
 ---
 
 ## Routing
@@ -123,19 +125,31 @@ All respect `prefers-reduced-motion`: draw one static frame, cancel RAF.
 ## CI/CD
 
 ```
-push → main
+push → main  (runner: Node 24)
   ↓
 npm ci
-playwright install chromium
+playwright install chromium   (cached by package-lock hash)
   ↓
 npm run build
   ├── cv:build          → public/cv/*.yaml
   ├── resume:generate   → DOCX + TXT
   ├── resume:pdf        → PDF via Playwright
-  └── astro build       → static site
+  └── astro build       → static site + sitemap-index.xml
   ↓
 GitHub Pages deploy
+  ↓
+notify_telegram  (always; success / build-fail / deploy-fail)
 ```
+
+The Telegram step passes secrets and context through an `env:` block (never inline `${{ }}` in shell) and skips silently if secrets are absent. Workflow: `.github/workflows/deploy.yml`.
+
+---
+
+## SEO
+
+- `@astrojs/sitemap` generates `sitemap-index.xml` at build time, covering every profile × language route.
+- `public/robots.txt` allows all and points to the sitemap.
+- Per-page canonical, Open Graph and Twitter Card meta are built in `Layout.astro`, language-aware via `og:locale`.
 
 ---
 

@@ -10,7 +10,7 @@
 2. [CV YAML — полный справочник полей](#2-cv-yaml--полный-справочник-полей)
 3. [Multi-profile система](#3-multi-profile-система)
 4. [Языки и i18n](#4-языки-и-i18n)
-5. [Showcase — projects.yaml](#5-showcase--projectsyaml)
+5. [Showcase — project list](#5-showcase--project-list)
 6. [Case Study страницы](#6-case-study-страницы)
 7. [Changelog — changelog.yaml](#7-changelog--changelogyaml)
 8. [Поток данных](#8-поток-данных)
@@ -225,7 +225,7 @@ meta:
 
 ---
 
-## 5. Showcase — projects.yaml
+## 5. Showcase — project list
 
 ```yaml
 projects:
@@ -430,7 +430,7 @@ Prop `hasCasePage` — добавляет ссылку на case study если 
 | `/en` | `[...slug].astro` | `public/cv/en.yaml` |
 | `/devops` | `[...slug].astro` | `public/cv/{defaultLang}_devops.yaml` |
 | `/devops/en` | `[...slug].astro` | `public/cv/en_devops.yaml` |
-| `/showcase` | `showcase/index.astro` | `projects.yaml` |
+| `/showcase` | `showcase/index.astro` | `projects_{lang}.yaml` |
 | `/showcase/en` | `showcase/[...rest].astro` | kind=list |
 | `/showcase/{slug}` | `showcase/[...rest].astro` | case study, default lang |
 | `/showcase/{slug}/en` | `showcase/[...rest].astro` | case study, en |

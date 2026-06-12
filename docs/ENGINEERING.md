@@ -244,7 +244,7 @@ astro build             # статический сайт
 ## 8. CI / GitHub Actions
 
 ```
-push → main
+push → main  (runner: Node 24)
   ↓
 npm ci
   ↓
@@ -254,13 +254,14 @@ npm run build
   ├── cv:build          → public/cv/*.yaml
   ├── resume:generate   → DOCX + TXT
   ├── resume:pdf        → PDF
-  └── astro build       → статический сайт
+  └── astro build       → статический сайт + sitemap-index.xml
   ↓
 upload artifact → deploy → GitHub Pages
   ↓
 notify_telegram (always, даже при падении build)
   └── отправляет статус + ветку + short SHA в TG-бот
-      secrets: PIPLINE_BOT_SECRET, CHAT_ID
+      secrets: PIPLINE_BOT_SECRET, CHAT_ID — через env-блок,
+        а не inline ${{ }} в shell
       если секреты не настроены — шаг пропускается молча
 ```
 

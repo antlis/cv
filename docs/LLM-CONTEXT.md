@@ -45,7 +45,8 @@ src/
     i18n/
       translations.yaml    # all UI strings for all languages
     showcase/
-      projects.yaml        # showcase project list
+      projects_en.yaml     # showcase project list (English)
+      projects_ru.yaml     # showcase project list (Russian)
     changelog/
       changelog.yaml       # version history
   pages/
@@ -57,11 +58,14 @@ src/
     changelog.astro
     404.astro
   components/
-    Layout.astro           # shared layout: header, nav, lang switcher, footer
+    Layout.astro           # shared layout: header, nav (JS dropdown), lang switcher, footer
     HomePage.astro         # CV page renderer
-    ProjectCard.astro      # showcase project card (featured + archived modes)
-    ProjectPage.astro      # case study page template
-    AnimatedBackground.astro
+    ProjectCard.astro      # showcase project card (featured + archived modes; first image-cover card is eager/LCP)
+    ProjectPage.astro      # case study page template (+ click-to-zoom image lightbox)
+    AnimatedBackground.astro  # default CSS background
+    GalaxyBackground.astro    # canvas starfield (alternative)
+    PlayStationWaves.astro    # canvas XMB filled waves (alternative)
+    WaveLines.astro           # canvas XMB glow lines (alternative)
     blocks/
       TextBlock.astro      # case study text block
       ImageBlock.astro     # case study image block
@@ -95,8 +99,8 @@ public/
 docs/
   INFO.md                  # data structure reference
   ENGINEERING.md           # architecture decisions
-  BKG_INFO.md              # AnimatedBackground docs
-  llm-context.md           # this file
+  BKG_INFO.md              # all background components — props, tuning, previews
+  LLM-CONTEXT.md           # this file
   examples/
     example_cv.yaml        # full CV YAML example
     example_cv.json        # JSON Resume example
@@ -178,7 +182,7 @@ profiles:
     spec: devops   # reads en_devops.yaml, ru_devops.yaml
 ```
 
-`slug` = URL segment. `spec` = delta filename prefix. They can differ.
+`slug` = URL segment. `spec` = delta filename prefix. **They must be equal** — routing keys on `slug`, while CV files and download links key on `spec`. `merge.mjs` enforces `slug === spec` with a fail-fast guard (both empty/null for the default profile); if they diverge the profile page silently desyncs from its CV and downloads.
 
 If `profiles.yml` is missing — graceful fallback to single default profile.
 
@@ -265,7 +269,9 @@ All styles in `src/styles/global.css`. Token-based via CSS custom properties in 
 
 ## Showcase and case studies
 
-### Project list (`src/content/showcase/projects.yaml`)
+### Project list (`src/content/showcase/projects_{lang}.yaml`)
+
+One file per language (`projects_en.yaml`, `projects_ru.yaml`). Keep the slug set and `order` values in sync across languages. `order` must be unique within a list (duplicate orders fall back to an alphabetical tiebreak and reorder unexpectedly).
 
 Each entry:
 ```yaml
@@ -396,7 +402,7 @@ No changes to any `.astro` file needed.
 
 ## How to add a project to showcase
 
-Add an entry to `src/content/showcase/projects.yaml`. That's it.
+Add an entry to `src/content/showcase/projects_{lang}.yaml` (one file per language; keep slug and `order` in sync across them). That's it.
 
 To link a project card to its case study:
 ```yaml
@@ -496,6 +502,10 @@ Save output as `src/content/cv/{lang}.yaml`.
 - **`showcaseHref` must include lang** — it's built in `Layout.astro`, not hardcoded
 - **Profiles without `profiles.yml`** work fine — graceful fallback
 - **Adding a language or profile** requires no changes to `.astro` files — only YAML and config
+- **`profile.slug` must equal `profile.spec`** — `merge.mjs` fails the build if they diverge
+- **A media folder name must match its showcase slug** — case-study routes are derived from folder names
+- **`t('section.key')` returns a resolved string** — never index it again by `[lang]` (that yields `undefined` and silently drops the translation)
+- **Showcase `order` must be unique** per language list, and the same per slug across languages
 
 ---
 
@@ -507,7 +517,7 @@ Save output as `src/content/cv/{lang}.yaml`.
 | `src/content/languages/languages.yml` | Languages + default |
 | `src/content/profiles/profiles.yml` | Profiles + slugs |
 | `src/content/i18n/translations.yaml` | All UI strings |
-| `src/content/showcase/projects.yaml` | Showcase project list |
+| `src/content/showcase/projects_{lang}.yaml` | Showcase project list (per language) |
 | `src/scripts/merge.mjs` | YAML merge logic |
 | `src/components/Layout.astro` | Header, nav, lang switcher, footer |
 | `src/components/ProjectPage.astro` | Case study page template |

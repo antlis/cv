@@ -80,7 +80,7 @@ src/content/
   languages/
     languages.yml      ← language config
   showcase/
-    projects.yaml      ← projects list
+    projects_{lang}.yaml  ← projects list (per language)
   changelog/
     changelog.yaml     ← version history
   i18n/
@@ -108,7 +108,7 @@ See **[`docs/INFO.md`](docs/INFO.md)** for merge rules and delta file format.
 
 ### Project cards
 
-Add projects to `src/content/showcase/projects.yaml`. Each card supports metrics, media gallery, stack tags, archive toggle, and links.
+Add projects to `src/content/showcase/projects_{lang}.yaml`. Each card supports metrics, media gallery, stack tags, archive toggle, and links.
 
 See `docs/examples/example_project.yaml` for a full annotated example.
 
@@ -276,7 +276,7 @@ src/
     profiles/profiles.yml
     languages/languages.yml
     i18n/translations.yaml
-    showcase/projects.yaml
+    showcase/projects_{lang}.yaml
     changelog/changelog.yaml
   pages/
     index.astro            # default profile + default lang
