@@ -6,10 +6,12 @@
 [![Last Commit](https://img.shields.io/github/last-commit/KeeGooRoomiE/cv_hub?color=blue)](https://github.com/KeeGooRoomiE/cv_hub/commits/main)
 ![Stars](https://img.shields.io/github/stars/KeeGooRoomiE/cv_hub?style=flat)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/KeeGooRoomiE/cv_hub/blob/main/CONTRIBUTING.md)
+[![Latest Release](https://img.shields.io/github/v/release/KeeGooRoomiE/cv_hub?label=release&color=blue)](https://github.com/KeeGooRoomiE/cv_hub/releases)
 
 **Your personal site, CV, and project portfolio — from one YAML file.**
 
 🌐 **Live demo:** https://keegooroomie.github.io/cv_hub/
+📋 **Changelog:** [CHANGELOG.md](CHANGELOG.md) · [live history](https://keegooroomie.github.io/cv_hub/changelog) · [releases](https://github.com/KeeGooRoomiE/cv_hub/releases)
 
 ![CV Hub Preview](docs/repo-assets/preview_main.jpeg)
 [![Lighthouse Performance](https://img.shields.io/badge/Lighthouse-Performance%20100-00C853?logo=lighthouse&logoColor=white)](https://keegooroomii.github.io/cv_hub/)
