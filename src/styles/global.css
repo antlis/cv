@@ -228,7 +228,10 @@ a:hover { text-decoration: underline; }
   background: rgba(var(--accent-rgb) / 0.10);
 }
 
-@media (max-width: 640px) {
+/* Responsive breakpoints (plain CSS — no var() in media queries):
+   md = 768px  → desktop ↔ mobile base: header, fonts, paddings, background
+   lg = 960px  → multi-column grids (CV sidebar+main, showcase 2-up)         */
+@media (max-width: 768px) {
   .header__row {
     gap: 6px;
   }
@@ -242,8 +245,11 @@ a:hover { text-decoration: underline; }
     display: none;
   }
 
-  .nav a,
-  .dropdown__trigger {
+  /* `.header` prefix raises specificity above base `.dropdown__trigger`
+     ({ font: inherit; padding: ... } declared later in source), otherwise the
+     Role button keeps 16px / wider padding on mobile and mismatches the links. */
+  .header .nav a,
+  .header .dropdown__trigger {
     padding: 6px 8px;
     font-size: 14px;
   }
@@ -256,6 +262,10 @@ a:hover { text-decoration: underline; }
   .lang a {
     padding: 6px 8px;
     font-size: 14px;
+  }
+
+  .container {
+    padding: 16px 12px;
   }
 }
 
@@ -387,7 +397,7 @@ a:hover { text-decoration: underline; }
   gap: 14px;
 }
 
-@media (min-width: 900px) {
+@media (min-width: 960px) {
   .grid { grid-template-columns: 1fr 1fr; }
 }
 
@@ -898,11 +908,11 @@ a:hover { text-decoration: underline; }
   text-align: center;
 }
 
-@media (max-width: 920px) {
+@media (max-width: 960px) {
   .metrics-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 }
 
-@media (max-width: 560px) {
+@media (max-width: 768px) {
   .metrics-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 

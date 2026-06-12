@@ -20,6 +20,7 @@ Versioning: [Semantic Versioning](https://semver.org/).
 - CI: Telegram notification now passes secrets and context through an `env` block instead of inline `${{ }}` interpolation in the shell script
 - CI: GitHub Actions runner upgraded to Node 24
 - CI: PDF export now drives the runner's preinstalled Google Chrome (`channel: 'chrome'`) instead of downloading Playwright's chromium — removes the `cdn.playwright.dev` download that was stalling and hanging deploys; the Playwright browser-cache step was dropped. Local builds still use Playwright's bundled chromium
+- Responsive breakpoints consolidated from seven ad-hoc values to two — `768px` (desktop/mobile base: header, fonts, paddings, animated background) and `960px` (multi-column CV and showcase grids); mobile container side padding tightened
 
 ### Removed
 - Dead code in the dynamic showcase route — unused featured/regular/archived split, leftover CSS classes and a stray `...` token in the card markup
@@ -31,6 +32,7 @@ Versioning: [Semantic Versioning](https://semver.org/).
 - Role dropdown accessibility — added `aria-haspopup`, `aria-controls` and `aria-expanded` synced with open state; removed a stray always-true `active` class on the trigger
 - i18n: showcase card labels (Platforms/Stack/Tags/Featured) on non-default-language lists no longer fall back to English literals — a stray `[lang]` index on an already-resolved string was dropping the real translations; now correctly localized and ready for additional languages
 - Build robustness: home page now guards a missing merged CV artifact with a fallback instead of crashing the build (matches the dynamic profile route)
+- Mobile header — the Role dropdown button rendered larger than the nav links (16px vs 14px, wider padding) because a later `.dropdown__trigger { font: inherit }` overrode the mobile rule; the mobile rule's specificity was raised so the button now matches the links
 
 ---
 
