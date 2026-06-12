@@ -1,6 +1,35 @@
 # actual types of elements: fixed, added, changed, removed
 
 changelog:
+  - version: "1.5.4"
+    date: "2026-06-12"
+    changes:
+      - type: added
+        text: "Click-to-zoom lightbox for case-study images — clicking any Deep Dive image opens it fullscreen; close via backdrop click, close button or Escape"
+      - type: added
+        text: "SEO: sitemap.xml (via @astrojs/sitemap, covers all profile × language routes) and robots.txt pointing to it"
+      - type: added
+        text: "merge.mjs validates the profile slug === spec invariant and fails fast with a clear message, preventing silent desync between a profile's URL and its CV/download files"
+      - type: changed
+        text: "Tags de-emphasized — removed borders and muted text on Platforms/Stack/Tags pills so the identical-looking groups stop competing for attention and section hierarchy reads clearer"
+      - type: changed
+        text: "CI: Telegram notification now passes secrets and context through an env block instead of inline ${{ }} interpolation in the shell script"
+      - type: changed
+        text: "CI: GitHub Actions runner upgraded to Node 24"
+      - type: fixed
+        text: "AnimatedBackground performance — reduced orb blur (80px → 60px), slowed drift cycles to 16–22s and removed scale() from keyframes so the blurred layer is cached instead of re-rasterized every frame; cuts desktop scroll/idle jank"
+      - type: fixed
+        text: "Showcase LCP — first card with an actual image cover now loads eager with fetchpriority=high; remaining covers stay lazy"
+      - type: fixed
+        text: "i18n: showcase card labels (Platforms/Stack/Tags/Featured) on non-default-language lists no longer fall back to English literals — a stray [lang] index on an already-resolved string was dropping the real translations; now correctly localized and ready for additional languages"
+      - type: fixed
+        text: "Role dropdown accessibility — added aria-haspopup, aria-controls and aria-expanded synced with open state; removed a stray always-true active class on the trigger"
+      - type: fixed
+        text: "Removed hover-lift from passive cards (Experience and others) — the global .card:hover translate/shadow was a false affordance on non-clickable cards; hover now stays only on interactive showcase project cards"
+      - type: fixed
+        text: "Build robustness: home page now guards a missing merged CV artifact with a fallback instead of crashing the build (matches the dynamic profile route)"
+      - type: removed
+        text: "Dead code in the dynamic showcase route — unused featured/regular/archived split, leftover CSS classes and a stray ... token in the card markup"
   - version: "1.5.3"
     date: "2026-04-26"
     changes:
@@ -28,6 +57,10 @@ changelog:
         text: "Sticky header now works unconditionally — body height: 100% constrained scroll to html element; changed to min-height: 100%"
       - type: fixed
         text: "Role dropdown — replaced CSS :hover toggle with JS click-toggle and click-outside to close; menu no longer closes on accidental cursor exit; added smooth opacity/transform transition"
+      - type: fixed
+        text: "Scroll jank — body background-attachment: fixed replaced with a fixed pseudo-element layer; gradients no longer repaint on every scroll frame"
+      - type: fixed
+        text: "Removed mix-blend-mode: overlay from the scanline noise layer — eliminated a fullscreen compositing pass per frame with no visible difference at 0.06 opacity"
   - version: "1.5.2"
     date: "2026-04-05"
     changes:

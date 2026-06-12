@@ -6,6 +6,33 @@ Versioning: [Semantic Versioning](https://semver.org/).
 
 ---
 
+## [1.5.4] — 2026-06-12
+
+### Added
+- Click-to-zoom lightbox for case-study images — clicking any Deep Dive image opens it fullscreen; close via backdrop click, close button or Escape
+- SEO: `sitemap.xml` (via `@astrojs/sitemap`, covers all profile × language routes) and `robots.txt` pointing to it
+
+### Added
+- `merge.mjs` validates the profile `slug === spec` invariant and fails fast with a clear message, preventing silent desync between a profile's URL and its CV/download files
+
+### Changed
+- Tags de-emphasized — removed borders and muted text on Platforms/Stack/Tags pills so the identical-looking groups stop competing for attention and section hierarchy reads clearer (lead designer feedback)
+- CI: Telegram notification now passes secrets and context through an `env` block instead of inline `${{ }}` interpolation in the shell script
+- CI: GitHub Actions runner upgraded to Node 24
+
+### Removed
+- Dead code in the dynamic showcase route — unused featured/regular/archived split, leftover CSS classes and a stray `...` token in the card markup
+
+### Fixed
+- Removed hover-lift from passive cards (Experience and others) — the global `.card:hover` translate/shadow was a false affordance on non-clickable cards; hover now stays only on interactive showcase project cards (lead designer feedback)
+- AnimatedBackground performance — reduced orb blur (80px → 60px), slowed drift cycles to 16–22s and removed `scale()` from keyframes so the blurred layer is cached instead of re-rasterized every frame; cuts desktop scroll/idle jank
+- Showcase LCP — first card with an actual image cover now loads `eager` with `fetchpriority="high"`; remaining covers stay lazy
+- Role dropdown accessibility — added `aria-haspopup`, `aria-controls` and `aria-expanded` synced with open state; removed a stray always-true `active` class on the trigger
+- i18n: showcase card labels (Platforms/Stack/Tags/Featured) on non-default-language lists no longer fall back to English literals — a stray `[lang]` index on an already-resolved string was dropping the real translations; now correctly localized and ready for additional languages
+- Build robustness: home page now guards a missing merged CV artifact with a fallback instead of crashing the build (matches the dynamic profile route)
+
+---
+
 ## [1.5.3] — 2026-04-26
 
 ### Added
@@ -22,6 +49,8 @@ Versioning: [Semantic Versioning](https://semver.org/).
 - Telegram notification now covers build failures — `notify_telegram` uses `needs: [build, deploy]` with `if: always()` so a failed build also triggers notification; message extended with branch name and short commit SHA
 - Sticky header now works unconditionally — `html, body { height: 100% }` constrained body to viewport height, causing scroll to happen on `<html>` and making `position: sticky` ineffective; changed to `html { height: 100% }` / `body { min-height: 100% }`
 - Role dropdown — replaced CSS `:hover` toggle with JS click-toggle and click-outside to close; menu no longer closes on accidental cursor exit; added smooth opacity/transform transition
+- Scroll jank — body `background-attachment: fixed` replaced with a fixed pseudo-element layer; gradients no longer repaint on every scroll frame
+- Removed `mix-blend-mode: overlay` from the scanline noise layer — eliminated a fullscreen compositing pass per frame with no visible difference at 0.06 opacity
 
 ---
 
