@@ -26,4 +26,8 @@ pnpm-debug.log*
 *.pdf
 *.txt
 /public/cv
+
+# Claude local working files (behaviour file CLAUDE.md stays committed)
+.claude/
+# Working audit — single whole file at root, not committed
 AUDIT.md

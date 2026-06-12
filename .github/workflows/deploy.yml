@@ -32,14 +32,38 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Cache Playwright browsers
-        uses: actions/cache@v4
+      - name: Restore Playwright cache
+        id: playwright-cache
+        uses: actions/cache/restore@v4
         with:
           path: ~/.cache/ms-playwright
           key: playwright-${{ hashFiles('package-lock.json') }}
 
+      # Skip entirely on a cache hit. On a miss, install system deps once, then
+      # retry the browser download — cdn.playwright.dev intermittently stalls a
+      # connection with no progress and no timeout, hanging the whole job.
       - name: Install Playwright Chromium
-        run: npx playwright install chromium --with-deps
+        if: steps.playwright-cache.outputs.cache-hit != 'true'
+        run: |
+          npx playwright install-deps chromium
+          for i in 1 2 3; do
+            if timeout 180 npx playwright install chromium; then
+              exit 0
+            fi
+            echo "::warning::Playwright browser download stalled (attempt $i/3), retrying in 5s"
+            sleep 5
+          done
+          echo "::error::Playwright install failed after 3 attempts"
+          exit 1
+
+      # Save only on a miss AND a successful install, so a partial/stalled
+      # download is never cached (which would poison every later run).
+      - name: Save Playwright cache
+        if: steps.playwright-cache.outputs.cache-hit != 'true' && success()
+        uses: actions/cache/save@v4
+        with:
+          path: ~/.cache/ms-playwright
+          key: playwright-${{ hashFiles('package-lock.json') }}
 
       - name: Build Astro site
         run: npm run build
