@@ -15,7 +15,7 @@ CV Hub — статический сайт-резюме, построенный 
 | Data | YAML | Human-readable single source of truth, easy to diff and version |
 | Deploy | GitHub Pages + Actions | Free, immutable builds, no runtime server |
 | Styles | Plain CSS + custom properties | No build overhead, theme switching via one token file |
-| Docs | DOCX / PDF / TXT | Generated from YAML at build time via Playwright + docx.js |
+| Docs | DOCX / PDF / TXT | Generated from YAML at build time via docx.js (DOCX/TXT) and Playwright (PDF) |
 
 ---
 
@@ -128,12 +128,12 @@ All respect `prefers-reduced-motion`: draw one static frame, cancel RAF.
 push → main  (runner: Node 24)
   ↓
 npm ci
-playwright install chromium   (cached by package-lock hash)
+verify chrome   (runner's preinstalled Google Chrome — no browser download)
   ↓
 npm run build
   ├── cv:build          → public/cv/*.yaml
   ├── resume:generate   → DOCX + TXT
-  ├── resume:pdf        → PDF via Playwright
+  ├── resume:pdf        → PDF via Playwright (drives system Chrome on CI)
   └── astro build       → static site + sitemap-index.xml
   ↓
 GitHub Pages deploy
@@ -142,6 +142,8 @@ notify_telegram  (always; success / build-fail / deploy-fail)
 ```
 
 The Telegram step passes secrets and context through an `env:` block (never inline `${{ }}` in shell) and skips silently if secrets are absent. Workflow: `.github/workflows/deploy.yml`.
+
+**PDF browser strategy:** PDF export uses Playwright's Node API, but the browser binary differs by environment. On CI it drives the runner's **preinstalled Google Chrome** (`channel: 'chrome'`, gated on `process.env.CI`) — no browser is downloaded, which avoids `cdn.playwright.dev` download stalls that were hanging deploys. Local builds use Playwright's bundled chromium. See `src/scripts/resume-export-pdf.mjs`.
 
 ---
 

@@ -19,6 +19,7 @@ Versioning: [Semantic Versioning](https://semver.org/).
 - Tags de-emphasized — removed borders and muted text on Platforms/Stack/Tags pills so the identical-looking groups stop competing for attention and section hierarchy reads clearer (lead designer feedback)
 - CI: Telegram notification now passes secrets and context through an `env` block instead of inline `${{ }}` interpolation in the shell script
 - CI: GitHub Actions runner upgraded to Node 24
+- CI: PDF export now drives the runner's preinstalled Google Chrome (`channel: 'chrome'`) instead of downloading Playwright's chromium — removes the `cdn.playwright.dev` download that was stalling and hanging deploys; the Playwright browser-cache step was dropped. Local builds still use Playwright's bundled chromium
 
 ### Removed
 - Dead code in the dynamic showcase route — unused featured/regular/archived split, leftover CSS classes and a stray `...` token in the card markup

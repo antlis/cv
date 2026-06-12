@@ -410,7 +410,10 @@ async function run() {
   const files = fs.readdirSync(path.join(ROOT, 'public/cv'))
     .filter(f => f.endsWith('.yaml'));
 
-  const browser = await chromium.launch();
+  // On CI use the runner's preinstalled Google Chrome (channel: 'chrome') — it
+  // avoids downloading Playwright's chromium, which stalls on cdn.playwright.dev.
+  // Locally fall back to Playwright's bundled chromium.
+  const browser = await chromium.launch(process.env.CI ? { channel: 'chrome' } : {});
   const page    = await browser.newPage();
 
   for (const file of files) {

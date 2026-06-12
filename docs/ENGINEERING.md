@@ -226,6 +226,8 @@ astro build             # статический сайт
 
 Добавление нового профиля или языка автоматически добавляет новые файлы документов без изменений в скриптах — они итерируются по `public/cv/` динамически.
 
+**PDF и браузер.** `resume-export-pdf.mjs` использует Node-API Playwright, но бинарь браузера зависит от окружения: на CI (`process.env.CI`) запускается **предустановленный Google Chrome раннера** через `channel: 'chrome'` — браузер не качается, что убирает зависания загрузки с `cdn.playwright.dev`. Локально — штатный bundled chromium Playwright.
+
 ---
 
 ## 7. DevOps-подход
@@ -248,7 +250,7 @@ push → main  (runner: Node 24)
   ↓
 npm ci
   ↓
-playwright install chromium (кэш по package-lock.json hash)
+verify chrome (системный Google Chrome раннера — без загрузки браузера)
   ↓
 npm run build
   ├── cv:build          → public/cv/*.yaml

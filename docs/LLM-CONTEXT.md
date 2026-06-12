@@ -428,6 +428,8 @@ npm run build
 Output naming: `resume_{lang}[_{spec}].{ext}`
 Examples: `resume_ru.pdf`, `resume_en_devops.docx`
 
+**PDF browser:** `resume-export-pdf.mjs` drives Playwright. On CI (`process.env.CI`) it launches the runner's preinstalled Google Chrome via `channel: 'chrome'` — no browser download (avoids `cdn.playwright.dev` stalls). Locally it uses Playwright's bundled chromium. The CI workflow has no `playwright install` step; it just verifies `google-chrome` is present.
+
 ---
 
 ## How to generate CV YAML from a resume

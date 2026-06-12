@@ -16,6 +16,8 @@ changelog:
         text: "CI: Telegram notification now passes secrets and context through an env block instead of inline ${{ }} interpolation in the shell script"
       - type: changed
         text: "CI: GitHub Actions runner upgraded to Node 24"
+      - type: changed
+        text: "CI: PDF export now drives the runner's preinstalled Google Chrome (channel: chrome) instead of downloading Playwright's chromium — removes the cdn.playwright.dev download that was stalling and hanging deploys; the Playwright browser-cache step was dropped. Local builds still use Playwright's bundled chromium"
       - type: fixed
         text: "AnimatedBackground performance — reduced orb blur (80px → 60px), slowed drift cycles to 16–22s and removed scale() from keyframes so the blurred layer is cached instead of re-rasterized every frame; cuts desktop scroll/idle jank"
       - type: fixed
