@@ -1,30 +1,6 @@
 projects:
-  - slug: cv-hub
-    order: 1
-    name: CV Hub
-    role: Author / Engineer
-    year: "2026"
-    description: Data-driven personal CV platform built with Astro and YAML as a single source of truth. Replaces static resumes and no-code builders with a version-controlled, extensible solution.
-    theme: blue
-    featured: true
-    platforms: [Web, GitHub Pages]
-    tags: [astro, yaml, automation, ci-cd, open-source]
-    stack: [Astro, TypeScript, YAML, GitHub Actions, CSS]
-    metrics:
-      - label: Free for all
-        value: "Open source"
-      - label: Free hosting
-        value: "GitHub Pages"
-    links:
-      - label: GitHub
-        url: https://github.com/antlis/cv
-        type: repo
-      - label: Changelog
-        url: /changelog
-        type: article
-
   - slug: cointelegraph
-    order: 2
+    order: 1
     name: Cointelegraph
     role: Senior Frontend Developer
     year: "2024–2026"
@@ -45,7 +21,7 @@ projects:
         type: demo
 
   - slug: mts-teleport
-    order: 3
+    order: 2
     name: MTS-Teleport
     role: Lead Frontend Developer
     year: "2023–2024"
@@ -66,7 +42,7 @@ projects:
         type: demo
 
   - slug: autoplatform
-    order: 4
+    order: 3
     name: Autoplatform
     role: Senior Frontend Developer
     year: "2024–2025"
@@ -87,7 +63,7 @@ projects:
         type: demo
 
   - slug: goldenkey
-    order: 5
+    order: 4
     name: GoldenKey
     role: Frontend Developer
     year: "2022"
@@ -105,7 +81,7 @@ projects:
         type: demo
 
   - slug: topforex
-    order: 6
+    order: 5
     name: Topforex
     role: Frontend Developer
     year: "2021"
@@ -125,7 +101,7 @@ projects:
         type: demo
 
   - slug: telescope-gist
-    order: 7
+    order: 6
     name: telescope-gist
     role: Author / Engineer
     year: "2025"
@@ -145,7 +121,7 @@ projects:
         type: repo
 
   - slug: tg-media-bot
-    order: 8
+    order: 7
     name: tg-media-bot
     role: Author / Engineer
     year: "2025"
@@ -165,7 +141,7 @@ projects:
         type: repo
 
   - slug: tg-mpv-bot
-    order: 9
+    order: 8
     name: tg-mpv-bot
     role: Author / Engineer
     year: "2025"
@@ -185,7 +161,7 @@ projects:
         type: repo
 
   - slug: ustek
-    order: 10
+    order: 9
     name: Ustek
     role: Frontend Developer
     year: "2020"
@@ -201,7 +177,7 @@ projects:
         type: demo
 
   - slug: welltechs
-    order: 11
+    order: 10
     name: Welltechs
     role: Frontend Developer
     year: "2020"
@@ -217,7 +193,7 @@ projects:
         type: demo
 
   - slug: elmerck
-    order: 12
+    order: 11
     name: Elmerck
     role: Frontend Developer
     year: "2019"
@@ -233,7 +209,7 @@ projects:
         type: demo
 
   - slug: appliedtech
-    order: 13
+    order: 12
     name: Appliedtech
     role: Frontend Developer
     year: "2023"
