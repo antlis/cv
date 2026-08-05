@@ -3,11 +3,11 @@ profiles:
     label: "Generalist"
     slug: ""
     spec: null
-  - id: devops
-    label: "DevOps"
-    slug: "devops"
-    spec: devops
-  - id: gamedev
-    label: "Game Developer"
-    slug: "gamedev"
-    spec: gamedev
+  - id: react
+    label: "React"
+    slug: "react"
+    spec: react
+  - id: fullstack
+    label: "Fullstack"
+    slug: "fullstack"
+    spec: fullstack

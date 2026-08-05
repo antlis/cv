@@ -1,0 +1,146 @@
+name: Лисовский Антон
+title: Fullstack Developer (Vue.js / Node.js)
+
+summary: >
+  Fullstack-разработчик с 11+ годами опыта, специализируюсь на Vue.js + Node.js.
+  Строил микросервисы, REST API, GraphQL, IoT-платформы и веб-приложения.
+  Опыт работы с SSR/SSG, Docker, PostgreSQL, Redis, CI/CD.
+  Закрываю полный цикл — от фронтенда до деплоя и мониторинга.
+
+achievements:
+  - Миграция UI-модуля с Blazor на Vue 3 SPA — ~30 экранов без простоя
+  - Бэкенд для IoT-платформы ToolSense — Node.js + GraphQL + SSO + PDF-отчёты
+  - PrismHR — React + TypeScript + Node.js + GraphQL + Serverless + AWS
+  - Внутренние инструменты — Node.js/Express + Puppeteer, 50K записей/сутки
+  - Миграция Vue 2 → Vue 3 с поэтапным снижением технического долга
+  - Интеграция с gRPC, GraphQL, REST API, SignalR в крупных проектах
+
+skills:
+  - group: Frontend
+    items: [Vue.js (Vue 2, Vue 3), Nuxt.js (Nuxt 2, Nuxt 3), React, TypeScript]
+
+  - group: Backend
+    items: [Node.js, Express, GraphQL, REST API, WebSocket, gRPC, SignalR]
+
+  - group: Базы данных
+    items: [PostgreSQL, Redis, MongoDB]
+
+  - group: State Management
+    items: [Vuex, Pinia, Redux Toolkit, TanStack Query]
+
+  - group: UI / Styling
+    items: [Tailwind CSS, daisyUI, Vuetify, Storybook]
+
+  - group: Тестирование
+    items: [Vitest, Vue Test Utils, Playwright, Jest]
+
+  - group: Инструменты
+    items: [Vite, Bun, Webpack, ESLint, Prettier, Husky, Git]
+
+  - group: CI/CD / DevOps
+    items: [GitLab CI, GitHub Actions, Docker, Serverless, AWS]
+
+  - group: Мониторинг
+    items: [Sentry, ApexCharts, Chart.js]
+
+  - group: Другое
+    items: [Module Federation, OpenAPI, Puppeteer, Camoufox, SSO, Azure AD, Google OAuth]
+
+  - group: Языки
+    items: [Русский — Родной, Английский — C2 (в совершенстве)]
+
+experience:
+
+  - company: Амбрелла Защита Информационных систем
+    role: Senior Frontend разработчик
+    period: Апр 2026 — настоящее время
+    description:
+      - Перевёл UI-модуль с legacy Blazor на Vue 3 SPA, отвечаю за архитектуру, интеграцию с бэкендом (.NET Aspire микросервисы) и CI/CD
+      - Спроектировал SPA — Vue Router, Pinia, vue-i18n, Tailwind CSS 4 + daisyUI
+      - Type-safe интеграция с бэкендом — генерация TypeScript-типов из OpenAPI-контракта
+      - Реал-тайм мониторинг через SignalR, дашборды, редактор конфигураций на Monaco Editor
+      - GitLab CI (validate → build → test → deploy), покрытие до 80%
+    stack: [Vue 3, TypeScript, Vite, Pinia, Vue Router, Tailwind CSS, daisyUI, SignalR, ApexCharts, Monaco Editor, Vitest, Playwright, GitLab CI, Docker]
+
+  - company: Creative Code
+    role: Senior Frontend Developer (part time)
+    period: Ноя 2025 — Июн 2026
+    description:
+      - Аутсорс-студия, клиенты из США
+      - Alpha — конструктор страниц, калькулятор автокредита, Sentry
+      - OneVision — AI-платформа, дашборды, стриминг AI-саммари через SSE
+      - DataFusion — data-платформа, TanStack Query, серверное состояние
+      - Scrapers — Node.js/Express + Puppeteer + stealth, Python + Camoufox, 50K записей/сутки
+    stack: [Vue 3, Vuex, Vite, React 18, TypeScript, Redux Toolkit, Tailwind, Chart.js, TanStack Query, Node.js, Puppeteer, Camoufox, Sentry, Docker]
+
+  - company: ToolSense
+    role: Senior Front-end / Fullstack Developer (Vue.js, Node.js, TypeScript)
+    period: Июн 2021 — Май 2023
+    description:
+      - Платформа управления ассетами (IoT), международная команда
+      - Frontend на Vue.js, Backend API на Node.js + TypeScript + GraphQL
+      - Генерация PDF-отчётов, SSO-авторизация (Azure AD, Google OAuth)
+      - Кастомный UI Kit, система тикетов, рефакторинг legacy
+    stack: [Vue.js, TypeScript, Node.js, GraphQL, SSO, Azure AD, Google OAuth, Custom UI Kit]
+
+  - company: Прикладные технологии, ООО
+    role: Frontend Developer / Fullstack Developer
+    period: Июл 2019 — Июн 2021
+    description:
+      - PrismHR (США) — веб-приложение для управления налогами, React + TypeScript, Node.js + GraphQL, Serverless, AWS, Docker
+      - Внутреннее веб-приложение — Outlook-like календарь, диаграмма Ганта, Jira-like таск-трекер на Vue.js + Nuxt.js + Vuetify, WebSockets
+    stack: [React, Vue.js, Nuxt.js, TypeScript, Node.js, GraphQL, Vuetify, Serverless, AWS, Docker, WebSockets, Storybook]
+
+  - company: Мобильные ТелеСистемы (МТС)
+    role: Ведущий Frontend разработчик
+    period: Апр 2023 — Июн 2024
+    description:
+      - Проект — МТС-Телепорт (автоматизация логистики)
+      - Поддержка и развитие крупного веб-приложения для управления логистическими процессами
+      - Миграция Vue 2 → Vue 3, разработка кастомного UI Kit с Storybook
+      - Интеграция с backend через GraphQL, gRPC, REST API
+    stack: [Vue.js (Vue 2, Vue 3), TypeScript, Vuetify, Custom UI Kit, Storybook, GraphQL, gRPC, REST API, CI/CD]
+
+  - company: Лоция
+    role: Senior Frontend Разработчик (Vue.js, Nuxt)
+    period: Июл 2024 — Авг 2025
+    description:
+      - Проект — autoplatform.ru
+      - Vue 3 + Nuxt 3 + TypeScript, SSO-авторизация (JWT)
+      - Микрофронтенд-архитектура с Module Federation
+      - Интеграция с внешними REST API, подход BFF
+    stack: [Vue 3, Nuxt 3, TypeScript, Module Federation, JWT, SSO, REST API, Playwright, Jest]
+
+  - company: ООО Цифровой элемент
+    role: Frontend-разработчик
+    period: Мар 2018 — Июл 2019
+    description:
+      - Digital-агентство, клиентские и внутренние веб-проекты
+      - Разработка и поддержка веб-приложений, личные кабинеты
+    stack: [JavaScript (ES6), Vue.js, HTML, CSS, PostCSS, Gulp, Webpack]
+
+  - company: insite-it
+    role: Веб-разработчик / Frontend Developer
+    period: Авг 2016 — Мар 2018
+    description:
+      - Онлайн-система бронирования столов для Galaxy Club — drag & drop интерфейс
+      - XML-парсеры и веб-скрейперы (Nightmare.js)
+    stack: [Vue.js, JavaScript (ES6), HTML, CSS, PHP, Netcat, Nightmare.js]
+
+  - company: Upwork / byrocketscience
+    role: Веб-разработчик
+    period: Янв 2015 — Дек 2017
+    description:
+      - Фриланс — разработка веб-сайтов для международных клиентов
+    stack: [Ruby on Rails, PHP, Symfony, WordPress, WooCommerce, OpenCart, Jekyll, JavaScript, jQuery]
+
+education:
+  - institution: Южно-Уральский государственный университет (Национальный исследовательский университет)
+    degree: Промышленная теплоэнергетика (неоконченное высшее)
+    period: "2010"
+
+languages:
+  - language: Русский
+    level: Родной
+  - language: Английский
+    level: C2 (в совершенстве)

@@ -1,0 +1,140 @@
+name: Anton Lisovsky
+title: Senior Front-end Developer (React / Next.js)
+
+summary: >
+  Frontend developer with 11+ years of experience, specializing in React and Next.js.
+  Built AI platforms, page builders, dashboards, and SPA applications.
+  Experience with SSR/SSG, state management (Redux Toolkit, Zustand), testing,
+  and CI/CD. Full cycle — from architecture to deployment.
+
+achievements:
+  - JS → TypeScript migration (20K lines), reduced runtime bugs by 30%
+  - AI analytics platform with Chart.js dashboards and AI summary streaming via SSE
+  - Page builder for car dealers with auto loan calculator
+  - Optimized Core Web Vitals for site with ~1M monthly visitors
+  - Test coverage with Vitest + React Testing Library + Playwright up to 80%
+  - PrismHR web app — React + TypeScript + Node.js + GraphQL + Serverless
+
+skills:
+  - group: React / Next.js
+    items: [React, Next.js, React 18, SSR, SSG, React Server Components]
+
+  - group: State Management
+    items: [Redux Toolkit, Zustand, TanStack Query]
+
+  - group: TypeScript / JS
+    items: [TypeScript, JavaScript (ES6+)]
+
+  - group: UI / Styling
+    items: [Tailwind CSS, daisyUI, shadcn/ui, Chart.js]
+
+  - group: Testing
+    items: [Vitest, React Testing Library, Playwright, Jest]
+
+  - group: API
+    items: [REST API, GraphQL, WebSocket, Serverless]
+
+  - group: Tools
+    items: [Vite, Webpack, ESLint, Prettier, Husky, Git]
+
+  - group: CI/CD
+    items: [GitHub Actions, GitLab CI, Docker]
+
+  - group: Monitoring
+    items: [Sentry, Sentry Profiling]
+
+  - group: Other
+    items: [Storybook, Module Federation, Puppeteer, Camoufox]
+
+  - group: Languages (spoken)
+    items: [Russian — Native, English — C2 (Proficiency)]
+
+experience:
+
+  - company: Umbrella Information Security Systems
+    role: Senior Frontend Developer
+    period: Apr 2026 — Present
+    description:
+      - Migrated UI module from legacy Blazor to modern Vue 3 SPA, responsible for frontend architecture, backend integration and CI/CD
+      - Designed SPA architecture — Vue Router, Pinia, vue-i18n, design system on Tailwind CSS 4 + daisyUI
+      - Set up type-safe backend integration, TypeScript type generation from OpenAPI contract
+      - Real-time agent monitoring via SignalR, interactive dashboards on ApexCharts
+      - Quality gates — ESLint + Prettier + Husky/lint-staged, coverage up to 80%
+    stack: [Vue 3, TypeScript, Vite, Pinia, Vue Router, Tailwind CSS, daisyUI, SignalR, Vitest, Playwright, GitLab CI, Docker]
+
+  - company: Creative Code
+    role: Senior Frontend Developer (part time)
+    period: Nov 2025 — Jun 2026
+    description:
+      - Outsourcing studio for web and AI development, US clients
+      - Alpha (charlieobaugh.com) — car dealer platform, JS → TypeScript migration (20K lines), page builder, auto loan calculator, Sentry
+      - OneVision (onevision.ai) — AI analytics platform, Chart.js dashboards, drag-and-drop widget builder, AI summary streaming via SSE
+      - DataFusion (data-fusion.io) — data platform, Vue 3 + TypeScript, TanStack Query for server state
+      - Scrapers — web scraping service, Node.js/Express + Puppeteer + stealth, Python + Camoufox, 50K records/day
+    stack: [Vue 3, Vuex, Vite, React 18, TypeScript, Redux Toolkit, Tailwind, Chart.js, TanStack Query, Puppeteer, Camoufox, Sentry, Docker]
+
+  - company: Cointelegraph
+    role: Senior Frontend Developer (Vue.js, Nuxt)
+    period: Dec 2024 — Jan 2026
+    description:
+      - Maintained and developed features for a custom CMS for a major media project (~1M monthly visitors)
+      - Integrated AI image search/thumbnails and AI article translation
+      - Maintained cointelegraph.com — legacy (Vue 2 + Nuxt 2) and new version (Vue 3 + Nuxt 3)
+      - Redesigned and optimized pages, Core Web Vitals, TTI, LCP
+    stack: [Vue.js (Vue 2, Vue 3), Nuxt.js (Nuxt 2, Nuxt 3), TypeScript, Vuex, Pinia, Tailwind CSS, Vite, REST API, GraphQL]
+
+  - company: Lotsiya
+    role: Senior Frontend Developer (Vue.js, Nuxt)
+    period: Jul 2024 — Aug 2025
+    description:
+      - Project — autoplatform.ru
+      - Built web application and personal dashboard on Vue 3 + Nuxt 3 + TypeScript
+      - Micro-frontend architecture with Module Federation
+      - Integration with multiple external and internal REST APIs, BFF approach
+    stack: [Vue 3, Nuxt 3, TypeScript, Module Federation, JWT, SSO, REST API, Playwright, Jest]
+
+  - company: Priladnye Technologii LLC
+    role: Frontend Developer / Fullstack Developer
+    period: Jul 2019 — Jun 2021
+    description:
+      - PrismHR (USA) — tax management web app, React + TypeScript, Node.js + GraphQL, Serverless, AWS, Docker
+      - Applied Technologies corporate website — full-cycle development
+      - Internal web app (Outlook-like calendar, Gantt chart, Jira-like task management) on Vue.js + Nuxt.js
+    stack: [React, Vue.js, Nuxt.js, TypeScript, Node.js, GraphQL, Vuetify, Serverless, AWS, Docker, WebSockets, Storybook]
+
+  - company: Tsifrovoy Element LLC
+    role: Frontend Developer
+    period: Mar 2018 — Jul 2019
+    description:
+      - Digital agency, client and internal web projects
+      - Built and maintained web applications and websites, personal dashboards
+      - Redesigned and modernized existing sites
+    stack: [JavaScript (ES6), Vue.js, HTML, CSS, PostCSS, Gulp, Webpack]
+
+  - company: insite-it
+    role: Web Developer / Frontend Developer
+    period: Aug 2016 — Mar 2018
+    description:
+      - Online table booking system for Galaxy Club — drag & drop interface
+      - XML parsers and web scrapers (Nightmare.js)
+      - Responsive cross-browser development
+    stack: [Vue.js, JavaScript (ES6), HTML, CSS, PHP, Netcat, Nightmare.js]
+
+  - company: Upwork / byrocketscience
+    role: Web Developer
+    period: Jan 2015 — Dec 2017
+    description:
+      - Freelance — built websites for international clients
+      - Ruby on Rails, PHP, Symfony, WordPress, WooCommerce, OpenCart, Jekyll
+    stack: [Ruby on Rails, PHP, Symfony, WordPress, WooCommerce, OpenCart, Jekyll, JavaScript, jQuery]
+
+education:
+  - institution: South Ural State University (National Research University)
+    degree: Industrial Heat Power Engineering (incomplete)
+    period: "2010"
+
+languages:
+  - language: Russian
+    level: Native
+  - language: English
+    level: C2 (Proficiency)
