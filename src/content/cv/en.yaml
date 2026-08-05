@@ -1,178 +1,195 @@
-name: Alexander Gusarov
-title: Software Engineer — DevOps · Fullstack · GameDev
+name: Anton Lisovsky
+title: Senior Front-end Developer (Vue.js)
 
 summary: >
-  Software engineer with 14+ years across DevOps, fullstack and game development.
-  Managed infrastructure for 750+ servers, shipped products with 100M+ users,
-  built everything from CI/CD pipelines to multiplayer backends.
-  I close the full cycle — architecture, code, deployment — and I actually enjoy all of it.
+  Frontend developer with 11+ years of experience, specializing in the Vue.js ecosystem.
+  Migrated UI modules from legacy Blazor to Vue 3 SPA (~30 screens with zero downtime),
+  set up CI/CD with test coverage up to 80%, worked on large media projects
+  (~1M monthly visitors). Covers the full cycle — from architecture and backend
+  integration to testing and deployment.
 
 contacts:
   - label: Email
-    url: mailto:spartan.dgs.121@icloud.com
-  - label: GitHub
-    url: https://github.com/KeeGooRoomiE
+    url: mailto:antlis@protonmail.com
   - label: Telegram
-    url: https://t.me/spartan121
-  - label: Upwork
-    url: https://www.upwork.com/freelancers/~01764e57e0646f2fbf
+    url: https://t.me/Balkon1111
+  - label: GitHub
+    url: https://github.com/antlis
+  - label: GitLab
+    url: https://gitlab.com/antlis
   - label: LinkedIn
-    url: https://www.linkedin.com/in/alexander-gusarov-4a08911a2/
-  - label: Habr
-    url: https://career.habr.com/xandergusarov
+    url: https://www.linkedin.com/in/antlis/
+  - label: StackOverflow
+    url: https://stackoverflow.com/users/2983061/antlis
+  - label: Upwork
+    url: https://goo.gl/28ZPUz
+  - label: Website
+    url: https://antlis.is-a.dev/
+  - label: CV
+    url: https://resume-sandy-eta.vercel.app/
+  - label: Reference — Cointelegraph
+    url: https://drive.google.com/file/d/1rEyLX2xezoCDlS1RUBiFvWDx9L3PXgRE/view?usp=sharing
+  - label: Reference — MTS Digital
+    url: https://drive.google.com/file/d/1DRcIsWABu0LlOSgCAYsCBSr3Gzxrdr0i/view?usp=sharing
+  - label: Reference — ToolSense
+    url: https://drive.google.com/file/d/19Whpo_JMENq3820KWRcidW28s77zkjEG/view?usp=sharing
 
 achievements:
-  - Operated and automated infrastructure for 750+ Linux servers (Selectel VPS and bare metal) with 99.9% uptime
-  - Reduced deploy time from 8 to 2 minutes (−75%) and AWS costs from $550 to $300/month
-  - Send Balls — contributed to a mobile game with 100M+ downloads and top App Store rankings
-  - Bhop Jump — built multiplayer backend generating $160K+ revenue in the first quarter
-  - Lana and Ronen — 1M+ downloads mobile title
-  - Upwork Top Rated Plus — top 5% of freelancers with 20+ successful projects
+  - Migrated UI module from Blazor to Vue 3 SPA — ~30 screens with zero product downtime
+  - Raised test coverage with Vitest + Vue Test Utils + Playwright to 80%
+  - Reduced runtime bugs by 30% through JS to TypeScript migration (20K lines)
+  - Optimized performance for a site with ~1M monthly visitors (Core Web Vitals)
+  - Integrated AI image search, AI article translation, and AI summary streaming via SSE
+  - Set up GitLab CI — MR pipelines, semver-tagged releases, .deb package builds
 
 skills:
-  - group: Languages
-    items: [Go, C#, JavaScript, TypeScript, Dart, Swift, Java, GML]
-
-  - group: Backend & APIs
-    items: [Node.js, REST APIs, WebSockets, microservices, EF Core]
-
   - group: Frontend
-    items: [React, Angular, HTML, CSS, Tailwind]
+    items: [Vue.js (Vue 2, Vue 3), Nuxt.js (Nuxt 2, Nuxt 3), React, Next.js, TypeScript, JavaScript (ES6+)]
 
-  - group: DevOps & Infrastructure
-    items: [Kubernetes, Helm, Docker, Terraform, Ansible, GitLab CI, GitHub Actions, Jenkins]
+  - group: State Management
+    items: [Vuex, Pinia, Redux Toolkit]
 
-  - group: Cloud
-    items: [AWS — EC2, S3, RDS, VPC, IAM, ALB, Yandex Cloud, Selectel]
+  - group: UI / Styling
+    items: [Tailwind CSS, daisyUI, Vuetify, Custom UI Kit, Storybook]
 
-  - group: Observability
-    items: [Prometheus, VictoriaMetrics, Grafana, Loki, Alertmanager, CloudWatch]
+  - group: Testing
+    items: [Vitest, Vue Test Utils, Playwright, Jest]
 
-  - group: Databases
-    items: [PostgreSQL, ClickHouse, MySQL, MongoDB, Redis, RabbitMQ]
+  - group: API
+    items: [REST API, GraphQL, SignalR, WebSockets, gRPC]
 
-  - group: Game Development
-    items: [Unity, GameMaker, multiplayer systems, monetization, game design]
+  - group: Tools
+    items: [Vite, Bun, Webpack, ESLint, Prettier, Husky, Git]
 
-  - group: Platforms
-    items: [Linux, Web, iOS, Android, macOS]
+  - group: CI/CD
+    items: [GitLab CI, GitHub Actions, Docker]
+
+  - group: Monitoring
+    items: [Sentry, ApexCharts, Chart.js]
+
+  - group: Other
+    items: [Monaco Editor, vee-validate, valibot, TanStack Query, VueUse, Module Federation, OpenAPI, ProseMirror]
 
   - group: Languages (spoken)
-    items: [Russian — Native, English — IELTS 7.0 (B2)]
+    items: [Russian — Native, English — C2 (Proficiency)]
 
 experience:
 
-  - company: InfoScale
-    role: DevOps Engineer / Software Engineer
+  - company: Umbrella Information Security Systems
+    role: Senior Frontend Developer
+    period: Apr 2026 — Present
+    description:
+      - Migrated UI module from legacy Blazor to modern Vue 3 SPA, responsible for frontend architecture, backend integration and CI/CD
+      - Designed SPA architecture — Vue Router, Pinia, vue-i18n, design system on Tailwind CSS 4 + daisyUI
+      - Set up type-safe backend integration, TypeScript type generation from OpenAPI contract (openapi-typescript)
+      - Real-time agent monitoring via SignalR, interactive dashboards on ApexCharts, config/rule editor on Monaco Editor
+      - Form validation with vee-validate + valibot, JWT authentication
+      - GitLab CI (validate → build → test → deploy), MR pipelines, semver-tagged releases, .deb package builds
+      - Quality gates — ESLint + Prettier + Husky/lint-staged, unit tests with Vitest + Vue Test Utils, e2e with Playwright, coverage up to 80%
+      - Cross-functional team — designers, QA, backend (.NET Aspire microservices), DevOps
+    stack: [Vue 3, TypeScript, Vite, Pinia, Vue Router, vue-i18n, Tailwind CSS, daisyUI, SignalR, ApexCharts, Monaco Editor, vee-validate, valibot, Vitest, Playwright, GitLab CI, Docker]
+
+  - company: Creative Code
+    role: Senior Frontend Developer (part time)
+    period: Nov 2025 — Jun 2026
+    description:
+      - Outsourcing studio for web and AI development, US clients, led frontends for multiple products in parallel
+      - Alpha (charlieobaugh.com) — car dealer platform, JS → TypeScript migration (20K lines), page builder, auto loan calculator, Sentry
+      - OneVision (onevision.ai) — AI analytics platform, Chart.js dashboards, drag-and-drop widget builder, AI summary streaming via SSE
+      - DataFusion (data-fusion.io) — data platform, Vue 3 + TypeScript, TanStack Query for server state, 50% faster list loading via caching
+      - Scrapers — web scraping service, Node.js/Express + Puppeteer + stealth, Python + Camoufox for PerimeterX bypass, 50K records/day
+    stack: [Vue 3, Vuex, Vite, Next.js, React 18, TypeScript, Redux Toolkit, Tailwind, Chart.js, TanStack Query, Puppeteer, Camoufox, Sentry, Docker]
+
+  - company: Cointelegraph
+    role: Senior Frontend Developer (Vue.js, Nuxt)
     period: Dec 2024 — Jan 2026
     description:
-      - Monitored and maintained 750+ Linux servers (Selectel VPS and bare metal)
-        — network interfaces, ports, access management, incident response
-      - Managed Kubernetes clusters on Yandex Cloud and self-hosted
-        (GitLab, Matrix, Keycloak, Vault); wrote and maintained Helm charts
-      - Built Terraform infrastructure for ~20 AWS services ($550 → $300/month);
-        wrote custom modules, provisioned ClickHouse; Ansible for per-instance configuration
-      - Optimized CI/CD across multiple repos (GitHub Actions + GitLab CI);
-        unified pipeline structure reduced deploy time from 8 to 2 minutes
-      - Built observability stack from scratch — VictoriaMetrics probes, Prometheus alerting,
-        custom Grafana dashboards; Alertmanager integrated with Telegram and Matrix
-      - Designed and developed SaaS monitoring service end-to-end (Go + Gin/GORM + React)
-        — ping, domain, SSL checks with configurable intervals (10s–24h); deployed in-cluster on Kubernetes
-      - Responded to SSH brute-force attacks via KVM live access,
-        port blocking, user rotation, and timeout configuration
-      - Grew infrastructure team from 3 to 6 engineers; mentored 3 junior members
-    stack: [Kubernetes, Helm, Docker, Terraform, Ansible, AWS, Yandex Cloud, GitLab CI, GitHub Actions, Go, React, PostgreSQL, ClickHouse, VictoriaMetrics, Grafana]
+      - Maintained and developed features for a custom CMS for a major media project
+      - Worked with real-time collaborative editor ProseMirror, custom plugins, UX optimization
+      - Integrated AI image search/thumbnails and AI article translation
+      - Maintained cointelegraph.com — legacy (Vue 2 + Nuxt 2) and new version (Vue 3 + Nuxt 3)
+      - Redesigned and optimized pages (~1M monthly visitors), Core Web Vitals, TTI, LCP
+      - Integrated advertising solutions (banners, custom ad blocks, third-party providers)
+      - API contract alignment with backend (REST API, GraphQL), sprint planning and code review
+    stack: [Vue.js (Vue 2, Vue 3), Nuxt.js (Nuxt 2, Nuxt 3), TypeScript, Vuex, Pinia, Tailwind CSS, Vite, Bun, REST API, GraphQL, FSD]
 
-  - company: SOFTINTERMOB
-    role: Unity Developer
-    period: Nov 2023 — Jul 2024
+  - company: Lotsiya
+    role: Senior Frontend Developer (Vue.js, Nuxt)
+    period: Jul 2024 — Aug 2025
     description:
-      - Built two mobile applications from Figma designs to App Store release — full cycle
-      - Integrated Firebase and third-party SDKs, resolved compatibility issues on iOS/Android
-      - Refactored legacy codebase, improved stability and performance
-    stack: [Unity, C#, Firebase, iOS, Android]
+      - Project — autoplatform.ru
+      - Built web application and personal dashboard on Vue 3 + Nuxt 3 + TypeScript
+      - SSO authentication with JWT (access/refresh tokens)
+      - Micro-frontend architecture with Module Federation
+      - Integration with multiple external and internal REST APIs, BFF approach
+      - E2E testing (Playwright), unit tests (Jest), integration tests
+    stack: [Vue 3, Nuxt 3, TypeScript, Module Federation, JWT, SSO, REST API, Playwright, Jest]
 
-  - company: AZNResearch
-    role: Fullstack Developer
-    period: Jul 2022 — Oct 2023
+  - company: MTS (Mobile TeleSystems)
+    role: Lead Frontend Developer
+    period: Apr 2023 — Jun 2024
     description:
-      - Designed frontend architecture for internal government and enterprise products using Angular + Tailwind
-      - Developed backend microservices with .NET Core + EF Core, REST APIs and LINQ queries
-      - Introduced Git workflow, code reviews and CI pipelines, boosted team productivity by 25%
-    stack: [Angular, Tailwind, C#, .NET Core, SQL Server, MySQL]
+      - Project — MTS-Teleport (logistics automation)
+      - Maintained and developed a large web application for managing logistics processes
+      - Migrated from Vue 2 to Vue 3 — gradual component migration, reduced technical debt
+      - Built custom UI Kit with Storybook documentation
+      - Backend integration via GraphQL, gRPC, REST API
+      - CI/CD pipelines, mentored junior developers, conducted code reviews
+    stack: [Vue.js (Vue 2, Vue 3), TypeScript, Vuetify, Custom UI Kit, Storybook, GraphQL, gRPC, REST API, CI/CD]
 
-  - company: Neosight
-    role: Game Designer
-    period: Nov 2021 — Feb 2022
+  - company: ToolSense
+    role: Senior Front-end / Fullstack Developer (Vue.js, Node.js, TypeScript)
+    period: Jun 2021 — May 2023
     description:
-      - Wrote GDDs for 6 mobile games — core mechanics, monetization, progression systems
-      - Ran concept validation experiments, grew installs 30x, CTR from 0.4% to 5%
-      - Balanced levels and game curves using retention, difficulty and drop-off metrics
-    stack: [Unity, Game Design, Analytics]
+      - IoT asset management platform, international English-speaking team
+      - Frontend in Vue.js, Backend API in Node.js + TypeScript + GraphQL
+      - PDF report generation, SSO authentication (Azure AD, Google OAuth)
+      - Custom UI Kit, ticket management system
+      - Legacy architecture refactoring, mentored junior developers
+    stack: [Vue.js, TypeScript, Node.js, GraphQL, SSO, Azure AD, Google OAuth, Custom UI Kit]
 
-  - company: Udemy
-    role: Unity Developer
-    period: Mar 2021 — Oct 2021
+  - company: Priladnye Technologii LLC
+    role: Frontend Developer / Fullstack Developer
+    period: Jul 2019 — Jun 2021
     description:
-      - Built a German language learning app from scratch — 22 categories, ~3000 flashcards
-      - Optimized architecture and data storage, reduced app size from ~3GB to 400MB
-    stack: [Unity, C#, JSON, iOS, Android]
+      - Outsourcing company, worked on multiple commercial projects (including international)
+      - PrismHR (USA) — tax management web app, React + TypeScript, Node.js + GraphQL, Serverless, AWS, Docker
+      - Applied Technologies corporate website — full-cycle development
+      - Internal web app (Outlook-like calendar, Gantt chart, Jira-like task management) on Vue.js + Nuxt.js + Vuetify, WebSockets
+    stack: [React, Vue.js, Nuxt.js, TypeScript, Node.js, GraphQL, Vuetify, Serverless, AWS, Docker, WebSockets, Storybook]
 
-  - company: Popside Games
-    role: Level Designer
-    period: Jul 2020 — Oct 2020
+  - company: Tsifrovoy Element LLC
+    role: Frontend Developer
+    period: Mar 2018 — Jul 2019
     description:
-      - Designed and balanced 3000+ levels for Match-3 and Solitaire under tight production schedule
-      - Improved level completion rate by 15% through iterative testing
-    stack: [Game Design, Level Design]
+      - Digital agency, worked on client and internal web projects
+      - Built and maintained web applications and websites, personal dashboards
+      - Redesigned and modernized existing sites, responsive development
+      - Projects — ustekchel.ru, Elmerck, DIJEANS, welltechs.ru
+    stack: [JavaScript (ES6), Vue.js, HTML, CSS, EJS, PostCSS, Gulp, Webpack]
 
-  - company: SayGames
-    role: Game Designer
-    period: Feb 2020 — Jun 2020
+  - company: insite-it
+    role: Web Developer / Frontend Developer
+    period: Aug 2016 — Mar 2018
     description:
-      - Designed mechanics and levels for hyper-casual prototypes
-      - Contributed to Send Balls (100M+ downloads) and FlowerKing
-      - Improved D1-retention by 10% through retention/drop-off metric iterations
-    stack: [Game Design, Unity]
+      - Built and maintained corporate websites on CMS Netcat
+      - Online table booking system for Galaxy Club — drag & drop interface, editable event schedule
+      - XML parsers and web scrapers (Nightmare.js) for data integration
+      - Responsive cross-browser development, interactive Vue.js interfaces
+    stack: [Vue.js, JavaScript (ES6), HTML, CSS, PHP, Netcat, Nightmare.js]
 
-  - company: Goodline
-    role: Software Engineer
-    period: Nov 2019 — Jan 2020
+  - company: Upwork / byrocketscience
+    role: Web Developer
+    period: Jan 2015 — Dec 2017
     description:
-      - Developed and adapted internal React interfaces for mobile devices
-      - Improved performance by 25% through component optimization
-    stack: [React, JavaScript]
-
-  - company: Project Tech
-    role: Software Engineer / Co-Founder
-    period: Feb 2017 — Oct 2019
-    description:
-      - Co-founded a development studio — hired developers, negotiated with clients, signed contracts
-      - Acted as second engineer and tech lead — architecture decisions through to production code
-      - Shipped 10+ products — games, mobile apps and business software for restaurants, delivery services and VR
-      - Built multiplayer backend for Bhop Jump with a team of two — P2P + dedicated servers up to 16 players, $160K revenue in Q1
-      - Pitched publishing deals to indie developers — early experience in product and business development
-    stack: [Unity, C#, React, React Native, Xamarin, Node.js, WebSockets, Docker, VR]
+      - Freelance — built websites for international clients
+      - Ruby on Rails, PHP, Symfony, WordPress, WooCommerce, OpenCart, Jekyll
+      - Templating — Twig, Jade/Pug
+    stack: [Ruby on Rails, PHP, Symfony, WordPress, WooCommerce, OpenCart, Jekyll, Twig, Jade/Pug, JavaScript, jQuery]
 
 education:
-  - institution: Udemy
-    degree: Linux Foundation Computer Science
-    period: "2025"
+  - institution: South Ural State University (National Research University)
+    degree: Industrial Heat Power Engineering (incomplete)
+    period: "2010"
 
-  - institution: Udemy
-    degree: Certified Kubernetes Administrator
-    period: "2025"
 
-  - institution: Wargaming Forge
-    degree: Level Designer & Balancing
-    period: "2020"
-
-  - institution: Siberian Polytechnic University
-    degree: Faculty of Information Technology
-    period: 2017–2018
-
-languages:
-  - language: Russian
-    level: Native
-  - language: English
-    level: IELTS 7.0 (B2)
