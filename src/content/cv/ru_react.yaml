@@ -56,100 +56,119 @@ experience:
     role: Senior Frontend разработчик (React)
     period: Апр 2026 — настоящее время
     description:
-      - Перевёл UI-модуль с legacy Blazor на современный React 18 + TypeScript SPA, отвечаю за фронтенд-архитектуру, интеграцию с бэкендом и CI/CD
-      - Спроектировал SPA — React Router, Redux Toolkit, react-i18next, дизайн-система на Tailwind CSS 4 + shadcn/ui
-      - Настроил type-safe интеграцию с бэкендом, генерация TypeScript-типов и хуков из OpenAPI-контракта (openapi-typescript + orval)
-      - Реал-тайм мониторинг агентов через SignalR, дашборды на ApexCharts, редактор конфигураций на Monaco Editor
+      - Перевёл UI-модуль с устаревшего Blazor на современный React 18 + TypeScript SPA; отвечаю за фронтенд-архитектуру, интеграцию с бэкендом и CI/CD
+      - Спроектировал и реализовал с нуля новый фронтенд на React 18 + TypeScript + Vite, перенёс ~30 экранов без простоя продукта
+      - Выстроил архитектуру SPA — маршрутизация на React Router, состояние на Redux Toolkit, локализация через react-i18next, дизайн-система на Tailwind CSS 4 + shadcn/ui
+      - Настроил type-safe интеграцию с бэкендом — генерация TypeScript-типов и хуков из OpenAPI-контракта (openapi-typescript + orval), контракт-first с backend-командой
+      - Реал-тайм мониторинг состояния агентов через SignalR (@microsoft/signalr)
+      - Интерактивные дашборды и графики на ApexCharts
+      - Встроенный редактор конфигураций и правил на Monaco Editor с подсветкой синтаксиса (highlight.js)
       - Валидация форм на react-hook-form + zod, JWT-авторизация
-      - Quality gates — ESLint + Prettier + Husky/lint-staged, юнит-тесты на Vitest + React Testing Library, e2e на Playwright, покрытие до 80%
+      - Настроил GitLab CI (validate → build → test → deploy) — MR-пайплайны, релизы по semver-тегам с публикацией и сборкой .deb-пакета, авто/ручной деплой на тестовый стенд
+      - Внедрил фронтенд quality gates — ESLint + Prettier + Husky/lint-staged (pre-commit), юнит-тесты на Vitest + React Testing Library, e2e на Playwright, поднял покрытие до 80%
+      - Работа в кросс-функциональной команде — дизайнеры, QA, backend (.NET Aspire микросервисы — ApiGateway, CMDB, Deployer, Encryptor, Auth), DevOps
     stack: [React 18, TypeScript, Vite, Redux Toolkit, React Router, react-i18next, Tailwind CSS, shadcn/ui, SignalR, ApexCharts, Monaco Editor, react-hook-form, zod, Vitest, Playwright, GitLab CI, Docker]
 
   - company: Creative Code
     role: Senior Frontend Developer (React, part time)
     period: Ноя 2025 — Июн 2026
     description:
-      - Аутсорс-студия веб и AI-разработки, клиенты из США, параллельно вёл фронтенды нескольких продуктов
-      - Alpha (charlieobaugh.com) — платформа сайтов для автодилеров на Next.js 15 + React 18, миграция JS → TypeScript (20K строк), конструктор страниц, калькулятор автокредита, Sentry
-      - OneVision (onevision.ai) — AI-аналитическая платформа, дашборды на Chart.js, drag-and-drop конструктор виджетов, стриминг AI-саммари через SSE
-      - DataFusion (data-fusion.io) — data-платформа на React + TypeScript, серверное состояние на TanStack Query, кэширование списков на 50%
-      - Scrapers — сервис парсинга, Node.js/Express + Puppeteer + stealth, Python + Camoufox для обхода PerimeterX, 50K записей/сутки
+      - Аутсорс-студия веб- и AI-разработки, клиенты из США; параллельно вёл фронтенды нескольких продуктов и сервис веб-скрейпинга
+      - Alpha (charlieobaugh.com и др.) — платформа сайтов для автодилеров на Next.js 15 + React 18 — мигрировал кодовую базу с JavaScript на TypeScript (~20 000 строк), сократив число рантайм-багов на 30%
+      - Alpha — разработал конструктор страниц и калькулятор автокредита с гибкими настройками финансирования; интегрировал карты, медиаплееры, мониторинг ошибок (Sentry). Стек — Next.js 15, React 18, Redux Toolkit, Tailwind
+      - OneVision (onevision.ai) — AI-аналитическая платформа на React + TypeScript — интерактивные дашборды на Chart.js с drag-and-drop конструктором виджетов, стриминг AI-саммари в реальном времени через Server-Sent Events (SSE), загрузка файлов, интеграция Intercom
+      - DataFusion (data-fusion.io) — фронтенд data-платформы на React + TypeScript, серверное состояние на TanStack Query, ускорил загрузку списков за счёт кэширования на 50%
+      - Scrapers — сервис парсинга с обходом антибот-защит — Node.js/Express API на Puppeteer + stealth (ghost-cursor, рандомизация User-Agent) с JWT, rate-limiting и helmet; Python + Camoufox для обхода PerimeterX (напр. TrueCar) — собирал до 50 000 записей/сутки
     stack: [Next.js 15, React 18, TypeScript, Redux Toolkit, Zustand, TanStack Query, Tailwind, Chart.js, Node.js, Puppeteer, Camoufox, Sentry, Docker]
 
   - company: Cointelegraph
     role: Senior Frontend Разработчик (React, Next.js)
     period: Дек 2024 — Янв 2026
     description:
-      - Поддержка и развитие кастомной CMS для крупного медиа-проекта
-      - Работа с real-time редактором ProseMirror, кастомные плагины, оптимизация UX
-      - Интеграция AI-поиска изображений/thumbnails и AI-перевода статей
-      - Поддержка cointelegraph.com — legacy (React 16 + CRA) и новая версия (React 18 + Next.js)
-      - Редизайн и оптимизация страниц (аудитория ~1M посетителей/мес), Core Web Vitals, TTI, LCP
-      - Интеграция рекламных решений (баннеры, кастомные рекламные блоки, сторонние провайдеры)
-      - Согласование API-контрактов с backend (REST API, GraphQL), участие в планировании и code review
+      - Поддержка и разработка новых фич кастомной CMS для крупного медиа-проекта
+      - Работа с коллаборативным real-time редактором ProseMirror — расширение функциональности, кастомные плагины, оптимизация UX
+      - Интеграция AI-поиска изображений и thumbnails для статей
+      - Внедрение AI-перевода статей (интеграция внешних AI-сервисов)
+      - Добавление и развитие новых разделов CMS
+      - Поддержка и развитие основного сайта cointelegraph.com — legacy (React 16 + CRA) и новая версия (React 18 + Next.js)
+      - Редизайн и оптимизация страниц сайта (аудитория ~1 000 000 посетителей/мес)
+      - Оптимизация производительности — Core Web Vitals, TTI, LCP
+      - Реализация и интеграция рекламных решений — баннеры, кастомные рекламные блоки, сторонние рекламные провайдеры
+      - Декомпозиция задач и бизнес-логики; описание и согласование API-контрактов с backend (REST API, GraphQL)
+      - Участие в планировании, code review, оценке задач
     stack: [React (React 16, React 18), Next.js, TypeScript, Redux Toolkit, Zustand, Tailwind CSS, Vite, REST API, GraphQL, FSD]
 
   - company: Лоция
     role: Senior Frontend Разработчик (React, Next.js)
     period: Июл 2024 — Авг 2025
     description:
-      - Проект — autoplatform.ru
-      - Разработка веб-приложения и личного кабинета на React 18 + Next.js + TypeScript
-      - SSO-авторизация на основе JWT (access/refresh tokens)
-      - Микрофронтенд-архитектура с Module Federation
-      - Интеграция с множеством внешних и внутренних REST API, подход BFF
-      - E2E-тестирование (Playwright), unit-тесты (Jest), интеграционные тесты
-    stack: [React 18, Next.js, TypeScript, Module Federation, JWT, SSO, REST API, Playwright, Jest]
+      - Проект — autoplatform.ru — разработка веб-приложения и личного кабинета на React 18 + Next.js + TypeScript
+      - Реализация SSO-авторизации на основе JWT (access/refresh tokens)
+      - Интеграция микрофронтенд-архитектуры с использованием Module Federation
+      - Имплементация UI по Figma-макетам, соблюдение дизайн-системы
+      - Интеграция с множеством внешних и внутренних REST API
+      - Реализация подхода Backend for Frontend (BFF) для оптимизации взаимодействия с backend-сервисами
+      - Тесное взаимодействие с бизнес-аналитиком — декомпозиция требований, проработка бизнес-логики, пояснение технических ограничений
+      - Тестирование — E2E (Playwright), unit (Jest), интеграционные тесты
+    stack: [React 18, Next.js, TypeScript, Module Federation, BFF, JWT, SSO, REST API, Figma, Playwright, Jest]
 
   - company: Мобильные ТелеСистемы (МТС)
     role: Ведущий Frontend разработчик (React)
     period: Апр 2023 — Июн 2024
     description:
-      - Проект — МТС-Телепорт (автоматизация логистики)
-      - Поддержка и развитие крупного веб-приложения для управления логистическими процессами
+      - Проект — МТС-Телепорт (автоматизация логистики) — поддержка и развитие крупного веб-приложения для управления логистическими процессами
+      - Работа с большим legacy-кодом — постепенный рефакторинг и улучшение архитектуры
       - Миграция с legacy class-components на современный React (hooks, function components), снижение технического долга
-      - Разработка кастомного UI Kit с использованием Storybook
-      - Интеграция с backend через GraphQL, gRPC, REST API
-      - CI/CD пайплайны, менторинг младших разработчиков, code review
+      - Разработка и внедрение кастомного UI Kit — унификация интерфейсов, документирование компонентов в Storybook
+      - Разработка интерфейсов для оптимизации работы логистов и внутренних пользователей
+      - Интеграция с backend-сервисами через GraphQL, gRPC, REST API
+      - Настройка и поддержка CI/CD пайплайнов; менторинг младших разработчиков, code review
     stack: [React, TypeScript, MUI, Custom UI Kit, Storybook, GraphQL, gRPC, REST API, CI/CD]
 
   - company: ToolSense
     role: Senior Front-end Developer (React, TypeScript)
     period: Июн 2021 — Май 2023
     description:
-      - Платформа управления ассетами (IoT), международная англоговорящая команда
-      - Frontend на React + TypeScript, интеграция с GraphQL API
-      - Генерация PDF-отчётов, SSO-авторизация (Azure AD, Google OAuth)
-      - Кастомный UI Kit, система тикетов
-      - Рефакторинг legacy-архитектуры, менторинг Junior-разработчиков
+      - Разработка и поддержка платформы управления ассетами (IoT); работа в англоговорящей международной команде
+      - Разработка frontend-части на React + TypeScript, интеграция с GraphQL API
+      - Исправление багов, оптимизация производительности и стабильности приложения
+      - Реализация генерации PDF-отчётов
+      - Внедрение SSO-авторизации (Azure AD, Google OAuth)
+      - Разработка и развитие кастомного UI Kit, системы создания и управления тикетами
+      - Рефакторинг legacy-архитектуры, code review; менторинг Junior-разработчиков
     stack: [React, TypeScript, GraphQL, Redux Toolkit, SSO, Azure AD, Google OAuth, Custom UI Kit]
 
   - company: Прикладные технологии, ООО
     role: Frontend Developer / Fullstack Developer (React)
     period: Июл 2019 — Июн 2021
     description:
-      - Аутсорсинговая компания, работа над несколькими коммерческими проектами (включая международные)
-      - PrismHR (США) — веб-приложение для управления налогами, React + TypeScript, Node.js + GraphQL, Serverless, AWS, Docker
-      - Корпоративный сайт Applied Technologies — полный цикл разработки
-      - Внутреннее веб-приложение (календарь Outlook-like, диаграмма Ганта, управление задачами Jira-like) на React + Next.js, WebSockets
+      - Аутсорсинговая компания — работа над несколькими коммерческими проектами, включая международные
+      - PrismHR (США) — веб-приложение для управления налогами для американского рынка, работа в англоговорящей команде; frontend на React + TypeScript, Backend API на Node.js + GraphQL; кастомный UI Kit с документированием в Storybook; Serverless-архитектура, AWS (Lambda), Docker
+      - Корпоративный сайт Applied Technologies — полный цикл (проектирование, вёрстка, интеграция, публикация)
+      - Внутреннее веб-приложение (Jira/Outlook-like) — календарь (Outlook-like), диаграмма Ганта, управление задачами (Jira-like); real-time обновления через WebSockets; интерфейсы на React + Next.js
     stack: [React, Next.js, TypeScript, Node.js, GraphQL, Serverless, AWS, Docker, WebSockets, Storybook]
 
   - company: ООО Цифровой элемент
     role: Frontend-разработчик (React)
     period: Мар 2018 — Июл 2019
     description:
-      - Digital-агентство, работа над клиентскими и внутренними веб-проектами
-      - Разработка и поддержка веб-приложений и сайтов на React, личные кабинеты
-      - Редизайн и модернизация существующих сайтов, адаптивная верстка
-      - Проекты — ustekchel.ru, Elmerck, DIJEANS, welltechs.ru
+      - Digital-агентство / digital-интегратор — работа над клиентскими и внутренними веб-проектами
+      - Разработка и поддержка клиентской части веб-приложений и сайтов на React
+      - Редизайн и модернизация существующих сайтов, ранее разработанных компанией
+      - Разработка личных кабинетов и интерактивных пользовательских сценариев
+      - Адаптивная вёрстка, оптимизация производительности, кроссбраузерность
+      - Проекты — ustekchel.ru (редизайн личного кабинета), Elmerck (корпоративный сайт), DIJEANS (редизайн), welltechs.ru
     stack: [React, JavaScript (ES6), TypeScript, HTML, CSS, PostCSS, Webpack]
 
   - company: insite-it
     role: Веб-разработчик / Frontend Developer (React)
     period: Авг 2016 — Мар 2018
     description:
-      - Онлайн-система бронирования столов для Galaxy Club — drag & drop интерфейс на React, редактируемое расписание
-      - XML-парсеры и веб-скрейперы (Nightmare.js) для интеграции данных
-      - Адаптивная и кроссбраузерная верстка, интерактивные интерфейсы на React
+      - Разработка и поддержка корпоративных сайтов на CMS Netcat
+      - Вёрстка и интеграция макетов — адаптивная и кроссбраузерная
+      - Разработка интерактивных интерфейсов на React
+      - Онлайн-система бронирования столов для Galaxy Club — drag & drop интерфейс расположения столов, редактируемое расписание событий в админке
+      - Разработка XML-парсеров и веб-скрейперов (Nightmare.js) для интеграции данных
     stack: [React, JavaScript (ES6), HTML, CSS, PHP, Netcat, Nightmare.js]
 
   - company: Upwork / byrocketscience
@@ -157,7 +176,8 @@ experience:
     period: Янв 2015 — Дек 2017
     description:
       - Фриланс — разработка веб-сайтов для международных клиентов
-      - Ruby on Rails, PHP, Symfony, WordPress, WooCommerce, OpenCart, Jekyll
+      - Backend и CMS — Ruby on Rails, PHP, Symfony, WordPress, WooCommerce, OpenCart
+      - Статические сайты и шаблонизаторы — Jekyll, Twig, Jade/Pug
       - Первые проекты на JavaScript, jQuery и раннем React
     stack: [JavaScript, jQuery, React, Ruby on Rails, PHP, Symfony, WordPress, WooCommerce, OpenCart, Jekyll]
 

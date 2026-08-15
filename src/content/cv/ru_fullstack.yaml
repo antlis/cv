@@ -56,94 +56,104 @@ experience:
     role: Senior Fullstack разработчик (Vue.js / Node.js)
     period: Апр 2026 — настоящее время
     description:
-      - Перевёл UI-модуль с legacy Blazor на Vue 3 SPA, отвечаю за архитектуру, интеграцию с бэкендом (.NET Aspire микросервисы) и CI/CD
-      - Спроектировал SPA — Vue Router, Pinia, vue-i18n, Tailwind CSS 4 + daisyUI
-      - Контракт-first интеграция с бэкендом — генерация TypeScript-типов из OpenAPI, согласование REST/SignalR-контрактов с backend-командой
-      - Реал-тайм мониторинг агентов через SignalR, дашборды на ApexCharts, редактор конфигураций на Monaco Editor
-      - GitLab CI (validate → build → test → deploy), сборка .deb-пакета, покрытие до 80%
+      - Перевёл UI-модуль с устаревшего Blazor на современный Vue 3 SPA; отвечаю за фронтенд-архитектуру, интеграцию с бэкендом и CI/CD
+      - Спроектировал и реализовал с нуля новый фронтенд на Vue 3 + TypeScript + Vite, перенёс ~30 экранов без простоя продукта
+      - Выстроил архитектуру SPA — маршрутизация на Vue Router, состояние на Pinia, локализация через vue-i18n, дизайн-система на Tailwind CSS 4 + daisyUI
+      - Контракт-first интеграция с бэкендом — генерация TypeScript-типов из OpenAPI, согласование REST/SignalR-контрактов с backend-командой (.NET Aspire микросервисы — ApiGateway, CMDB, Deployer, Encryptor, Auth)
+      - Реал-тайм мониторинг состояния агентов через SignalR (@microsoft/signalr), дашборды на ApexCharts, редактор конфигураций на Monaco Editor (highlight.js)
+      - Валидация форм на vee-validate + valibot, JWT-авторизация
+      - Настроил GitLab CI (validate → build → test → deploy) — MR-пайплайны, релизы по semver-тегам, сборка .deb-пакета, авто/ручной деплой
+      - Quality gates — ESLint + Prettier + Husky/lint-staged, юнит-тесты на Vitest + Vue Test Utils, e2e на Playwright, покрытие до 80%
     stack: [Vue 3, TypeScript, Node.js, Vite, Pinia, Vue Router, Tailwind CSS, daisyUI, SignalR, ApexCharts, Monaco Editor, OpenAPI, GitLab CI, Docker]
 
   - company: Creative Code
     role: Senior Fullstack Developer (part time)
     period: Ноя 2025 — Июн 2026
     description:
-      - Аутсорс-студия веб и AI-разработки, клиенты из США, вёл фронтенды и бэкенд-сервисы нескольких продуктов
-      - Alpha (charlieobaugh.com) — платформа сайтов для автодилеров, миграция JS → TypeScript (20K строк), конструктор страниц, калькулятор автокредита, Sentry
-      - OneVision (onevision.ai) — AI-платформа, дашборды на Chart.js, стриминг AI-саммари через Server-Sent Events (SSE)
-      - DataFusion (data-fusion.io) — data-платформа на Vue 3 + TypeScript, серверное состояние на TanStack Query
-      - Scrapers — сервис парсинга на Node.js/Express + Puppeteer + stealth с JWT, rate-limiting и helmet; Python + Camoufox для обхода PerimeterX, 50K записей/сутки
+      - Аутсорс-студия веб- и AI-разработки, клиенты из США; вёл фронтенды и бэкенд-сервисы нескольких продуктов
+      - Alpha (charlieobaugh.com и др.) — платформа сайтов для автодилеров — миграция JavaScript → TypeScript (~20 000 строк, −30% рантайм-багов), конструктор страниц, калькулятор автокредита, Sentry. Стек — Next.js 15, React 18, Redux Toolkit
+      - OneVision (onevision.ai) — AI-аналитическая платформа — дашборды на Chart.js, стриминг AI-саммари в реальном времени через Server-Sent Events (SSE), интеграция Intercom. Стек — Vue 3, Vuex, Vite
+      - DataFusion (data-fusion.io) — фронтенд data-платформы на Vue 3 + TypeScript, серверное состояние на TanStack Query
+      - Scrapers — сервис парсинга с обходом антибот-защит — Node.js/Express API на Puppeteer + stealth (ghost-cursor, рандомизация User-Agent) с JWT, rate-limiting и helmet; Python + Camoufox для обхода PerimeterX (напр. TrueCar) — до 50 000 записей/сутки
     stack: [Vue 3, React 18, TypeScript, Node.js, Express, Vite, Redux Toolkit, TanStack Query, Tailwind, Chart.js, Puppeteer, Camoufox, Python, Sentry, Docker]
 
   - company: Cointelegraph
     role: Senior Fullstack Разработчик (Vue.js / Node.js)
     period: Дек 2024 — Янв 2026
     description:
-      - Поддержка и развитие кастомной CMS для крупного медиа-проекта (~1M посетителей/мес)
-      - Real-time редактор ProseMirror с коллаборацией, интеграция AI-поиска изображений и AI-перевода статей
+      - Поддержка и разработка новых фич кастомной CMS для крупного медиа-проекта (~1 000 000 посетителей/мес)
+      - Работа с коллаборативным real-time редактором ProseMirror — кастомные плагины, оптимизация UX
+      - Интеграция AI-поиска изображений и AI-перевода статей (внешние AI-сервисы)
       - Разработка серверных эндпоинтов и BFF-слоя на Node.js для агрегации данных CMS и внешних AI-сервисов
-      - Поддержка cointelegraph.com — legacy (Vue 2 + Nuxt 2) и новая версия (Vue 3 + Nuxt 3, SSR)
-      - Согласование и описание API-контрактов с backend (REST API, GraphQL), оптимизация Core Web Vitals
+      - Поддержка и развитие cointelegraph.com — legacy (Vue 2 + Nuxt 2) и новая версия (Vue 3 + Nuxt 3, SSR)
+      - Оптимизация производительности (Core Web Vitals, TTI, LCP), интеграция рекламных решений
+      - Декомпозиция задач и бизнес-логики; описание и согласование API-контрактов с backend (REST API, GraphQL); архитектура FSD
     stack: [Vue.js (Vue 2, Vue 3), Nuxt.js (SSR), Node.js, TypeScript, Vuex, Pinia, Tailwind CSS, REST API, GraphQL, FSD]
 
   - company: Лоция
     role: Senior Fullstack Разработчик (Vue.js / Node.js)
     period: Июл 2024 — Авг 2025
     description:
-      - Проект — autoplatform.ru
-      - Разработка веб-приложения и личного кабинета на Vue 3 + Nuxt 3 + TypeScript
+      - Проект — autoplatform.ru — разработка веб-приложения и личного кабинета на Vue 3 + Nuxt 3 + TypeScript
       - Реализовал BFF-слой на Node.js для агрегации внешних и внутренних REST API и оптимизации взаимодействия с backend-сервисами
-      - SSO-авторизация на JWT (access/refresh tokens), микрофронтенд-архитектура с Module Federation
-      - E2E-тестирование (Playwright), unit-тесты (Jest), интеграционные тесты
-    stack: [Vue 3, Nuxt 3, Node.js, TypeScript, BFF, Module Federation, JWT, SSO, REST API, Playwright, Jest]
+      - Реализация SSO-авторизации на JWT (access/refresh tokens)
+      - Интеграция микрофронтенд-архитектуры с использованием Module Federation
+      - Имплементация UI по Figma-макетам; тесное взаимодействие с бизнес-аналитиком — декомпозиция требований, проработка бизнес-логики
+      - Тестирование — E2E (Playwright), unit (Jest), интеграционные тесты
+    stack: [Vue 3, Nuxt 3, Node.js, TypeScript, BFF, Module Federation, JWT, SSO, REST API, Figma, Playwright, Jest]
 
   - company: Мобильные ТелеСистемы (МТС)
     role: Ведущий Fullstack разработчик
     period: Апр 2023 — Июн 2024
     description:
-      - Проект — МТС-Телепорт (автоматизация логистики)
-      - Поддержка и развитие крупного веб-приложения для управления логистическими процессами
-      - Миграция Vue 2 → Vue 3, разработка кастомного UI Kit с Storybook
+      - Проект — МТС-Телепорт (автоматизация логистики) — поддержка и развитие крупного веб-приложения для управления логистическими процессами
+      - Работа с большим legacy-кодом, миграция Vue 2 → Vue 3, снижение технического долга
+      - Разработка и внедрение кастомного UI Kit с документированием в Storybook
       - Интеграция с backend-микросервисами через GraphQL, gRPC, REST API; участие в проектировании API-контрактов
-      - Настройка и поддержка CI/CD пайплайнов, менторинг младших разработчиков
+      - Настройка и поддержка CI/CD пайплайнов; менторинг младших разработчиков, code review
     stack: [Vue.js (Vue 2, Vue 3), TypeScript, Node.js, Vuetify, Custom UI Kit, Storybook, GraphQL, gRPC, REST API, CI/CD]
 
   - company: ToolSense
     role: Senior Front-end / Fullstack Developer (Vue.js, Node.js, TypeScript)
     period: Июн 2021 — Май 2023
     description:
-      - Платформа управления ассетами (IoT), международная англоговорящая команда
-      - Frontend на Vue.js, Backend API на Node.js + TypeScript + GraphQL
-      - Реализовал генерацию PDF-отчётов, SSO-авторизацию (Azure AD, Google OAuth)
+      - Разработка и поддержка платформы управления ассетами (IoT); международная англоговорящая команда
+      - Разработка frontend-части на Vue.js
+      - Разработка и поддержка Backend API на Node.js + TypeScript + GraphQL
+      - Реализовал генерацию PDF-отчётов и SSO-авторизацию (Azure AD, Google OAuth)
       - Кастомный UI Kit, система создания и управления тикетами
-      - Рефакторинг legacy-архитектуры, менторинг Junior-разработчиков
+      - Рефакторинг legacy-архитектуры, оптимизация производительности; менторинг Junior-разработчиков
     stack: [Vue.js, TypeScript, Node.js, GraphQL, PostgreSQL, SSO, Azure AD, Google OAuth, Custom UI Kit]
 
   - company: Прикладные технологии, ООО
     role: Frontend Developer / Fullstack Developer
     period: Июл 2019 — Июн 2021
     description:
-      - Аутсорсинговая компания, коммерческие проекты (включая международные)
-      - PrismHR (США) — веб-приложение для управления налогами, React + TypeScript на фронте, Backend API на Node.js + GraphQL, Serverless-архитектура на AWS (Lambda), Docker
-      - Внутреннее веб-приложение (Outlook-like календарь, диаграмма Ганта, Jira-like таск-трекер) на Vue.js + Nuxt.js + Vuetify, real-time через WebSockets
-      - Создание и развитие кастомного UI Kit, документирование в Storybook
-    stack: [React, Vue.js, Nuxt.js, TypeScript, Node.js, GraphQL, Serverless, AWS, Docker, WebSockets, Storybook]
+      - Аутсорсинговая компания — коммерческие проекты, включая международные
+      - PrismHR (США) — веб-приложение для управления налогами; frontend на React + TypeScript, Backend API на Node.js + GraphQL, Serverless-архитектура на AWS (Lambda), Docker; кастомный UI Kit в Storybook
+      - Корпоративный сайт Applied Technologies — полный цикл (проектирование, вёрстка, интеграция, публикация)
+      - Внутреннее веб-приложение (Jira/Outlook-like) — календарь, диаграмма Ганта, таск-трекер; real-time через WebSockets; на Vue.js + Nuxt.js + Vuetify
+    stack: [React, Vue.js, Nuxt.js, TypeScript, Node.js, GraphQL, Vuetify, Serverless, AWS, Docker, WebSockets, Storybook]
 
   - company: ООО Цифровой элемент
     role: Frontend / Fullstack разработчик
     period: Мар 2018 — Июл 2019
     description:
-      - Digital-агентство, клиентские и внутренние веб-проекты
+      - Digital-агентство — клиентские и внутренние веб-проекты
       - Разработка и поддержка веб-приложений и сайтов, личные кабинеты
-      - Интеграция с backend и внешними API, серверные шаблоны на Node.js (EJS)
+      - Интеграция с backend и внешними API; серверные шаблоны на Node.js (EJS)
+      - Адаптивная вёрстка, оптимизация производительности, кроссбраузерность
+      - Проекты — ustekchel.ru, Elmerck, DIJEANS, welltechs.ru
     stack: [JavaScript (ES6), Vue.js, Node.js, HTML, CSS, EJS, PostCSS, Gulp, Webpack]
 
   - company: insite-it
     role: Веб-разработчик / Fullstack Developer
     period: Авг 2016 — Мар 2018
     description:
-      - Онлайн-система бронирования столов для Galaxy Club — drag & drop интерфейс на Vue.js + серверная логика и админка
+      - Разработка и поддержка корпоративных сайтов на CMS Netcat
+      - Онлайн-система бронирования столов для Galaxy Club — drag & drop интерфейс на Vue.js плюс серверная логика и админка
       - Разработка XML-парсеров и веб-скрейперов (Nightmare.js) для интеграции данных
-      - Backend на PHP, интеграция с CMS Netcat, адаптивная кроссбраузерная верстка
+      - Backend на PHP, интеграция с CMS Netcat; адаптивная кроссбраузерная вёрстка
     stack: [Vue.js, JavaScript (ES6), PHP, Node.js, HTML, CSS, Netcat, Nightmare.js]
 
   - company: Upwork / byrocketscience
@@ -152,7 +162,7 @@ experience:
     description:
       - Фриланс — fullstack-разработка веб-сайтов для международных клиентов
       - Backend на Ruby on Rails, PHP, Symfony; фронт на JavaScript, jQuery
-      - CMS и e-commerce — WordPress, WooCommerce, OpenCart, статические сайты на Jekyll
+      - CMS и e-commerce — WordPress, WooCommerce, OpenCart; статические сайты на Jekyll
     stack: [Ruby on Rails, PHP, Symfony, JavaScript, jQuery, WordPress, WooCommerce, OpenCart, Jekyll]
 
 education:

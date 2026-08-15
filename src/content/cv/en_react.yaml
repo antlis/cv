@@ -56,100 +56,119 @@ experience:
     role: Senior Frontend Developer (React)
     period: Apr 2026 — Present
     description:
-      - Migrated UI module from legacy Blazor to modern React 18 + TypeScript SPA, responsible for frontend architecture, backend integration and CI/CD
-      - Designed SPA architecture — React Router, Redux Toolkit, react-i18next, design system on Tailwind CSS 4 + shadcn/ui
-      - Set up type-safe backend integration, TypeScript type and hook generation from OpenAPI contract (openapi-typescript + orval)
-      - Real-time agent monitoring via SignalR, interactive dashboards on ApexCharts, config/rule editor on Monaco Editor
+      - Migrated a UI module from legacy Blazor to a modern React 18 + TypeScript SPA; own the frontend architecture, backend integration and CI/CD
+      - Designed and built the new frontend from scratch on React 18 + TypeScript + Vite, moving ~30 screens with zero product downtime
+      - Set up the SPA architecture — routing with React Router, state with Redux Toolkit, localization via react-i18next, design system on Tailwind CSS 4 + shadcn/ui
+      - Set up type-safe backend integration — TypeScript type and hook generation from the OpenAPI contract (openapi-typescript + orval), contract-first with the backend team
+      - Real-time agent-status monitoring via SignalR (@microsoft/signalr)
+      - Interactive dashboards and charts on ApexCharts
+      - Built-in configuration/rule editor on Monaco Editor with syntax highlighting (highlight.js)
       - Form validation with react-hook-form + zod, JWT authentication
-      - Quality gates — ESLint + Prettier + Husky/lint-staged, unit tests with Vitest + React Testing Library, e2e with Playwright, coverage up to 80%
+      - Set up GitLab CI (validate → build → test → deploy) — MR pipelines, semver-tagged releases with publishing and .deb package builds, auto/manual deploy to a staging environment
+      - Introduced frontend quality gates — ESLint + Prettier + Husky/lint-staged (pre-commit), unit tests with Vitest + React Testing Library, e2e with Playwright, raised coverage to 80%
+      - Worked in a cross-functional team — designers, QA, backend (.NET Aspire microservices — ApiGateway, CMDB, Deployer, Encryptor, Auth), DevOps
     stack: [React 18, TypeScript, Vite, Redux Toolkit, React Router, react-i18next, Tailwind CSS, shadcn/ui, SignalR, ApexCharts, Monaco Editor, react-hook-form, zod, Vitest, Playwright, GitLab CI, Docker]
 
   - company: Creative Code
     role: Senior Frontend Developer (React, part time)
     period: Nov 2025 — Jun 2026
     description:
-      - Outsourcing studio for web and AI development, US clients, led frontends for multiple products in parallel
-      - Alpha (charlieobaugh.com) — car dealer platform on Next.js 15 + React 18, JS → TypeScript migration (20K lines), page builder, auto loan calculator, Sentry
-      - OneVision (onevision.ai) — AI analytics platform, Chart.js dashboards, drag-and-drop widget builder, AI summary streaming via SSE
-      - DataFusion (data-fusion.io) — data platform on React + TypeScript, TanStack Query for server state, 50% faster list loading via caching
-      - Scrapers — web scraping service, Node.js/Express + Puppeteer + stealth, Python + Camoufox for PerimeterX bypass, 50K records/day
+      - Web and AI outsourcing studio with US clients; ran frontends for several products and a web-scraping service in parallel
+      - Alpha (charlieobaugh.com and others) — car-dealer website platform on Next.js 15 + React 18 — migrated the codebase from JavaScript to TypeScript (~20,000 lines), cutting runtime bugs by 30%
+      - Alpha — built a page builder and an auto-loan calculator with flexible financing options; integrated maps, media players and error monitoring (Sentry). Stack — Next.js 15, React 18, Redux Toolkit, Tailwind
+      - OneVision (onevision.ai) — AI analytics platform on React + TypeScript — interactive Chart.js dashboards with a drag-and-drop widget builder, real-time AI summary streaming via Server-Sent Events (SSE), file uploads, Intercom integration
+      - DataFusion (data-fusion.io) — frontend of a data platform on React + TypeScript, server state with TanStack Query, 50% faster list loading via caching
+      - Scrapers — scraping service that bypasses anti-bot defenses — Node.js/Express API on Puppeteer + stealth (ghost-cursor, User-Agent randomization) with JWT, rate-limiting and helmet; Python + Camoufox to bypass PerimeterX (e.g. TrueCar) — collected up to 50,000 records/day
     stack: [Next.js 15, React 18, TypeScript, Redux Toolkit, Zustand, TanStack Query, Tailwind, Chart.js, Node.js, Puppeteer, Camoufox, Sentry, Docker]
 
   - company: Cointelegraph
     role: Senior Frontend Developer (React, Next.js)
     period: Dec 2024 — Jan 2026
     description:
-      - Maintained and developed features for a custom CMS for a major media project
-      - Worked with real-time collaborative editor ProseMirror, custom plugins, UX optimization
-      - Integrated AI image search/thumbnails and AI article translation
-      - Maintained cointelegraph.com — legacy (React 16 + CRA) and new version (React 18 + Next.js)
-      - Redesigned and optimized pages (~1M monthly visitors), Core Web Vitals, TTI, LCP
-      - Integrated advertising solutions (banners, custom ad blocks, third-party providers)
-      - API contract alignment with backend (REST API, GraphQL), sprint planning and code review
+      - Maintained and built new features for a custom CMS behind a major media project
+      - Worked with the collaborative real-time editor ProseMirror — extended functionality, custom plugins, UX optimization
+      - Integrated AI image and thumbnail search for articles
+      - Rolled out AI article translation (integration of external AI services)
+      - Added and evolved new CMS sections
+      - Maintained and developed the main cointelegraph.com site — legacy (React 16 + CRA) and new version (React 18 + Next.js)
+      - Redesigned and optimized site pages (~1,000,000 monthly visitors)
+      - Performance optimization — Core Web Vitals, TTI, LCP
+      - Implemented and integrated advertising solutions — banners, custom ad blocks, third-party ad providers
+      - Task and business-logic decomposition; specified and aligned API contracts with backend (REST API, GraphQL)
+      - Participated in planning, code review and estimation
     stack: [React (React 16, React 18), Next.js, TypeScript, Redux Toolkit, Zustand, Tailwind CSS, Vite, REST API, GraphQL, FSD]
 
   - company: Lotsiya
     role: Senior Frontend Developer (React, Next.js)
     period: Jul 2024 — Aug 2025
     description:
-      - Project — autoplatform.ru
-      - Built web application and personal dashboard on React 18 + Next.js + TypeScript
-      - SSO authentication with JWT (access/refresh tokens)
-      - Micro-frontend architecture with Module Federation
-      - Integration with multiple external and internal REST APIs, BFF approach
-      - E2E testing (Playwright), unit tests (Jest), integration tests
-    stack: [React 18, Next.js, TypeScript, Module Federation, JWT, SSO, REST API, Playwright, Jest]
+      - Project — autoplatform.ru — built the web application and personal dashboard on React 18 + Next.js + TypeScript
+      - Implemented SSO authentication based on JWT (access/refresh tokens)
+      - Integrated a micro-frontend architecture using Module Federation
+      - Implemented the UI from Figma mockups, following the design system
+      - Integration with many external and internal REST APIs
+      - Implemented a Backend for Frontend (BFF) approach to optimize interaction with backend services
+      - Close work with a business analyst — requirement decomposition, business-logic elaboration, explaining technical constraints
+      - Testing — E2E (Playwright), unit (Jest), integration tests
+    stack: [React 18, Next.js, TypeScript, Module Federation, BFF, JWT, SSO, REST API, Figma, Playwright, Jest]
 
   - company: MTS (Mobile TeleSystems)
     role: Lead Frontend Developer (React)
     period: Apr 2023 — Jun 2024
     description:
-      - Project — MTS-Teleport (logistics automation)
-      - Maintained and developed a large web application for managing logistics processes
-      - Migrated legacy class components to modern React (hooks, function components), reduced technical debt
-      - Built custom UI Kit with Storybook documentation
-      - Backend integration via GraphQL, gRPC, REST API
-      - CI/CD pipelines, mentored junior developers, conducted code reviews
+      - Project — MTS-Teleport (logistics automation) — maintained and developed a large web application for managing logistics processes
+      - Worked with a large legacy codebase — gradual refactoring and architecture improvements
+      - Migrated from legacy class components to modern React (hooks, function components), reduced technical debt
+      - Built and rolled out a custom UI Kit — unified interfaces, component documentation in Storybook
+      - Built interfaces to optimize the work of logisticians and internal users
+      - Integration with backend services via GraphQL, gRPC, REST API
+      - Set up and maintained CI/CD pipelines; mentored junior developers, conducted code reviews
     stack: [React, TypeScript, MUI, Custom UI Kit, Storybook, GraphQL, gRPC, REST API, CI/CD]
 
   - company: ToolSense
     role: Senior Front-end Developer (React, TypeScript)
     period: Jun 2021 — May 2023
     description:
-      - IoT asset management platform, international English-speaking team
-      - Frontend in React + TypeScript, integration with GraphQL API
-      - PDF report generation, SSO authentication (Azure AD, Google OAuth)
-      - Custom UI Kit, ticket management system
-      - Legacy architecture refactoring, mentored junior developers
+      - Built and maintained an IoT asset-management platform; worked in an international English-speaking team
+      - Built the frontend on React + TypeScript, integration with a GraphQL API
+      - Fixed bugs, improved application performance and stability
+      - Implemented PDF report generation
+      - Rolled out SSO authentication (Azure AD, Google OAuth)
+      - Built and evolved a custom UI Kit and the ticket creation and management system
+      - Refactored legacy architecture, code review; mentored junior developers
     stack: [React, TypeScript, GraphQL, Redux Toolkit, SSO, Azure AD, Google OAuth, Custom UI Kit]
 
   - company: Priladnye Technologii LLC
     role: Frontend Developer / Fullstack Developer (React)
     period: Jul 2019 — Jun 2021
     description:
-      - Outsourcing company, worked on multiple commercial projects (including international)
-      - PrismHR (USA) — tax management web app, React + TypeScript, Node.js + GraphQL, Serverless, AWS, Docker
-      - Applied Technologies corporate website — full-cycle development
-      - Internal web app (Outlook-like calendar, Gantt chart, Jira-like task management) on React + Next.js, WebSockets
+      - Outsourcing company — worked on multiple commercial projects, including international ones
+      - PrismHR (USA) — tax-management web app for the US market, worked in an English-speaking team; frontend on React + TypeScript, Backend API on Node.js + GraphQL; custom UI Kit documented in Storybook; Serverless architecture, AWS (Lambda), Docker
+      - Applied Technologies corporate website — full-cycle work (design, markup, integration, launch)
+      - Internal web app (Jira/Outlook-like) — Outlook-like calendar, Gantt chart, Jira-like task management; real-time updates via WebSockets; interfaces on React + Next.js
     stack: [React, Next.js, TypeScript, Node.js, GraphQL, Serverless, AWS, Docker, WebSockets, Storybook]
 
   - company: Tsifrovoy Element LLC
     role: Frontend Developer (React)
     period: Mar 2018 — Jul 2019
     description:
-      - Digital agency, worked on client and internal web projects
-      - Built and maintained React web applications and websites, personal dashboards
-      - Redesigned and modernized existing sites, responsive development
-      - Projects — ustekchel.ru, Elmerck, DIJEANS, welltechs.ru
+      - Digital agency / digital integrator — worked on client and internal web projects
+      - Built and maintained the client side of React web applications and websites
+      - Redesigned and modernized existing sites previously built by the company
+      - Built personal dashboards and interactive user flows
+      - Responsive markup, performance optimization, cross-browser support
+      - Projects — ustekchel.ru (dashboard redesign), Elmerck (corporate site), DIJEANS (redesign), welltechs.ru
     stack: [React, JavaScript (ES6), TypeScript, HTML, CSS, PostCSS, Webpack]
 
   - company: insite-it
     role: Web Developer / Frontend Developer (React)
     period: Aug 2016 — Mar 2018
     description:
-      - Online table booking system for Galaxy Club — drag & drop React interface, editable event schedule
-      - XML parsers and web scrapers (Nightmare.js) for data integration
-      - Responsive cross-browser development, interactive React interfaces
+      - Built and maintained corporate websites on CMS Netcat
+      - Markup and integration of mockups — responsive and cross-browser
+      - Built interactive interfaces on React
+      - Online table-booking system for Galaxy Club — drag & drop table-layout interface, editable event schedule in the admin panel
+      - Built XML parsers and web scrapers (Nightmare.js) for data integration
     stack: [React, JavaScript (ES6), HTML, CSS, PHP, Netcat, Nightmare.js]
 
   - company: Upwork / byrocketscience
@@ -157,8 +176,9 @@ experience:
     period: Jan 2015 — Dec 2017
     description:
       - Freelance — built websites for international clients
-      - Ruby on Rails, PHP, Symfony, WordPress, WooCommerce, OpenCart, Jekyll
-      - Early projects with JavaScript, jQuery, and early React
+      - Backend and CMS — Ruby on Rails, PHP, Symfony, WordPress, WooCommerce, OpenCart
+      - Static sites and templating — Jekyll, Twig, Jade/Pug
+      - Early projects with JavaScript, jQuery and early React
     stack: [JavaScript, jQuery, React, Ruby on Rails, PHP, Symfony, WordPress, WooCommerce, OpenCart, Jekyll]
 
 education:
