@@ -12,7 +12,7 @@ import { makeT } from '../scripts/t';
 import { ThemeScript, Toggle } from 'astro-theme-toggle/components';
 
 const {
-  title = 'CV Hub',
+  title = 'Anton Lisovsky',
   lang = 'en',
   section = 'main',
   profile = '',
@@ -34,15 +34,15 @@ const t = makeT(translations?.data ?? {}, lang);
 
 // --- Meta ---
 const repo = import.meta.env.GITHUB_REPOSITORY;
-const [owner] = repo ? repo.split('/') : [null, null];
-const siteUrl = owner
-  ? `https://${owner}.github.io/`
+const [owner] = repo ? repo.split('/') : [null];
+const siteOrigin = owner
+  ? `https://${owner}.github.io`
   : 'http://localhost:4321';
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 
 const metaDescription = description ?? t('meta.description');
-const metaImage = ogImage ?? `${siteUrl}/og-image.png`;
-const canonicalUrl = `${siteUrl}${Astro.url.pathname}`;
-const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const metaImage = ogImage ?? `${siteOrigin}${base}/og-image.png`;
+const canonicalUrl = `${siteOrigin}${Astro.url.pathname}`;
 
 // --- Navigation ---
 function buildHref(profileSlug: string, langId: string): string {

@@ -114,9 +114,9 @@ notfound404:
 
 meta:
   description:
-    en: "CV Hub - one place for your actual resume."
-    ru: "CV Hub - единое место для твоего резюме."
-    zh: "CV Hub — 一个展示你最新简历的地方。"
+    en: "Anton Lisovsky — Senior Frontend Developer (Vue.js / React). 11+ years building web apps, SPAs and platforms."
+    ru: "Лисовский Антон — Senior Frontend-разработчик (Vue.js / React). 11+ лет опыта: веб-приложения, SPA и платформы."
+    zh: "Anton Lisovsky — 高级前端开发工程师（Vue.js / React），11 年以上 Web 应用、SPA 与平台开发经验。"
   locale:
     en: "en_US"
     ru: "ru_RU"

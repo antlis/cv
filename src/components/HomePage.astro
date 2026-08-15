@@ -33,7 +33,9 @@ const t = {
   txt:  'TXT',
 };
 
-const pageTitle = `${data?.name ?? t.nameFallback} — CV Hub`;
+const displayName = data?.name ?? t.nameFallback;
+const pageTitle = data?.title ? `${displayName} — ${data.title}` : displayName;
+const metaDescription = (data?.summary ?? '').replace(/\s+/g, ' ').trim() || undefined;
 
 const contacts     = Array.isArray(data?.contacts)    ? data.contacts    : [];
 const rawSkills    = Array.isArray(data?.skills)      ? data.skills      : [];
@@ -59,7 +61,7 @@ const skillGroups = rawSkills
   .filter((g) => g.items.length > 0);
 ---
 
-<Layout title={pageTitle} lang={lang} section="main" profile={profile}>
+<Layout title={pageTitle} description={metaDescription} lang={lang} section="main" profile={profile}>
   <section class="container">
     <div class="page-grid">
 
