@@ -59,7 +59,7 @@ experience:
       - Перевёл UI-модуль с устаревшего Blazor на современный Vue 3 SPA; отвечаю за фронтенд-архитектуру, интеграцию с бэкендом и CI/CD
       - Спроектировал и реализовал с нуля новый фронтенд на Vue 3 + TypeScript + Vite, перенёс ~30 экранов без простоя продукта
       - Выстроил архитектуру SPA — маршрутизация на Vue Router, состояние на Pinia, локализация через vue-i18n, дизайн-система на Tailwind CSS 4 + daisyUI
-      - Контракт-first интеграция с бэкендом — генерация TypeScript-типов из OpenAPI, согласование REST/SignalR-контрактов с backend-командой (.NET Aspire микросервисы — ApiGateway, CMDB, Deployer, Encryptor, Auth)
+      - Контракт-first интеграция с бэкендом — генерация TypeScript-типов из OpenAPI, согласование REST/SignalR-контрактов с backend-командой (.NET Aspire микросервисы)
       - Реал-тайм мониторинг состояния агентов через SignalR (@microsoft/signalr), дашборды на ApexCharts, редактор конфигураций на Monaco Editor (highlight.js)
       - Валидация форм на vee-validate + valibot, JWT-авторизация
       - Настроил GitLab CI (validate → build → test → deploy) — MR-пайплайны, релизы по semver-тегам, сборка .deb-пакета, авто/ручной деплой

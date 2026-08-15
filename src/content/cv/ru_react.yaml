@@ -66,7 +66,7 @@ experience:
       - Валидация форм на react-hook-form + zod, JWT-авторизация
       - Настроил GitLab CI (validate → build → test → deploy) — MR-пайплайны, релизы по semver-тегам с публикацией и сборкой .deb-пакета, авто/ручной деплой на тестовый стенд
       - Внедрил фронтенд quality gates — ESLint + Prettier + Husky/lint-staged (pre-commit), юнит-тесты на Vitest + React Testing Library, e2e на Playwright, поднял покрытие до 80%
-      - Работа в кросс-функциональной команде — дизайнеры, QA, backend (.NET Aspire микросервисы — ApiGateway, CMDB, Deployer, Encryptor, Auth), DevOps
+      - Работа в кросс-функциональной команде — дизайнеры, QA, backend (.NET Aspire микросервисы), DevOps
     stack: [React 18, TypeScript, Vite, Redux Toolkit, React Router, react-i18next, Tailwind CSS, shadcn/ui, SignalR, ApexCharts, Monaco Editor, react-hook-form, zod, Vitest, Playwright, GitLab CI, Docker]
 
   - company: Creative Code

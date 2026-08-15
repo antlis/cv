@@ -59,7 +59,7 @@ experience:
       - Migrated a UI module from legacy Blazor to a modern Vue 3 SPA; own the frontend architecture, backend integration and CI/CD
       - Designed and built the new frontend from scratch on Vue 3 + TypeScript + Vite, moving ~30 screens with zero product downtime
       - Set up the SPA architecture — Vue Router, Pinia, vue-i18n, design system on Tailwind CSS 4 + daisyUI
-      - Contract-first backend integration — TypeScript type generation from OpenAPI, aligned REST/SignalR contracts with the backend team (.NET Aspire microservices — ApiGateway, CMDB, Deployer, Encryptor, Auth)
+      - Contract-first backend integration — TypeScript type generation from OpenAPI, aligned REST/SignalR contracts with the backend team (.NET Aspire microservices)
       - Real-time agent-status monitoring via SignalR (@microsoft/signalr), dashboards on ApexCharts, config editor on Monaco Editor (highlight.js)
       - Form validation with vee-validate + valibot, JWT authentication
       - Set up GitLab CI (validate → build → test → deploy) — MR pipelines, semver-tagged releases, .deb package builds, auto/manual deploy

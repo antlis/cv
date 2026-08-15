@@ -89,7 +89,7 @@ experience:
       - Form validation with vee-validate + valibot, JWT authentication
       - Set up GitLab CI (validate → build → test → deploy) — MR pipelines, semver-tagged releases with publishing and .deb package builds, auto/manual deploy to a staging environment
       - Introduced frontend quality gates — ESLint + Prettier + Husky/lint-staged (pre-commit), unit tests with Vitest + Vue Test Utils, e2e with Playwright, raised coverage to 80%
-      - Worked in a cross-functional team — designers, QA, backend (.NET Aspire microservices — ApiGateway, CMDB, Deployer, Encryptor, Auth), DevOps
+      - Worked in a cross-functional team — designers, QA, backend (.NET Aspire microservices), DevOps
     stack: [Vue 3, TypeScript, Vite, Pinia, Vue Router, vue-i18n, Tailwind CSS, daisyUI, SignalR, ApexCharts, Monaco Editor, vee-validate, valibot, Vitest, Playwright, GitLab CI, Docker]
 
   - company: Creative Code

@@ -66,7 +66,7 @@ experience:
       - Form validation with react-hook-form + zod, JWT authentication
       - Set up GitLab CI (validate → build → test → deploy) — MR pipelines, semver-tagged releases with publishing and .deb package builds, auto/manual deploy to a staging environment
       - Introduced frontend quality gates — ESLint + Prettier + Husky/lint-staged (pre-commit), unit tests with Vitest + React Testing Library, e2e with Playwright, raised coverage to 80%
-      - Worked in a cross-functional team — designers, QA, backend (.NET Aspire microservices — ApiGateway, CMDB, Deployer, Encryptor, Auth), DevOps
+      - Worked in a cross-functional team — designers, QA, backend (.NET Aspire microservices), DevOps
     stack: [React 18, TypeScript, Vite, Redux Toolkit, React Router, react-i18next, Tailwind CSS, shadcn/ui, SignalR, ApexCharts, Monaco Editor, react-hook-form, zod, Vitest, Playwright, GitLab CI, Docker]
 
   - company: Creative Code
