@@ -1,29 +1,30 @@
 name: Anton Lisovsky
-title: Fullstack Developer (Vue.js / Node.js)
+title: Fullstack Developer (Vue / React / Node.js)
 
 summary: >
-  Fullstack developer with 11+ years of experience, specializing in Vue.js + Node.js.
-  Built microservices, REST APIs, GraphQL backends, IoT platforms, and web applications.
-  Experience with SSR/SSG, Docker, PostgreSQL, Redis, CI/CD.
-  Full cycle — from frontend to deployment and monitoring.
+  Fullstack developer with 11+ years of experience — frontend in Vue.js and React,
+  backend in Node.js. Built microservices, REST/GraphQL APIs, BFF layers,
+  IoT platforms, and web applications. Experience with SSR/SSG, Docker,
+  PostgreSQL, Redis, queues, and CI/CD. Full cycle — from database schema
+  and API to frontend, deployment, and monitoring.
 
 achievements:
+  - Backend for IoT platform ToolSense — Node.js + GraphQL + SSO + PDF report generation
+  - PrismHR — React + Node.js + GraphQL + Serverless + AWS, full fullstack cycle
+  - Node.js BFF layer for autoplatform.ru — external API aggregation, SSO/JWT
+  - Web scraping service on Node.js/Express + Puppeteer — 50K records/day
   - Migrated UI module from Blazor to Vue 3 SPA — ~30 screens with zero downtime
-  - Backend for IoT platform ToolSense — Node.js + GraphQL + SSO + PDF reports
-  - PrismHR — React + TypeScript + Node.js + GraphQL + Serverless + AWS
-  - Internal tools — Node.js/Express + Puppeteer, 50K records/day
-  - Vue 2 → Vue 3 migration with gradual technical debt reduction
-  - Integration with gRPC, GraphQL, REST API, SignalR in large-scale projects
+  - Integration with gRPC, GraphQL, REST API, SignalR, SSE in large-scale projects
 
 skills:
   - group: Frontend
-    items: [Vue.js (Vue 2, Vue 3), Nuxt.js (Nuxt 2, Nuxt 3), React, TypeScript]
+    items: [Vue.js (Vue 2, Vue 3), Nuxt.js, React, Next.js, TypeScript, JavaScript (ES6+)]
 
   - group: Backend
-    items: [Node.js, Express, GraphQL, REST API, WebSocket, gRPC, SignalR]
+    items: [Node.js, Express, NestJS, GraphQL (Apollo), REST API, WebSocket, gRPC, SignalR, SSE]
 
   - group: Databases
-    items: [PostgreSQL, Redis, MongoDB]
+    items: [PostgreSQL, Redis, MongoDB, Prisma, TypeORM]
 
   - group: State Management
     items: [Vuex, Pinia, Redux Toolkit, TanStack Query]
@@ -38,13 +39,13 @@ skills:
     items: [Vite, Bun, Webpack, ESLint, Prettier, Husky, Git]
 
   - group: CI/CD / DevOps
-    items: [GitLab CI, GitHub Actions, Docker, Serverless, AWS]
+    items: [GitLab CI, GitHub Actions, Docker, Serverless, AWS (Lambda)]
 
   - group: Monitoring
     items: [Sentry, ApexCharts, Chart.js]
 
   - group: Other
-    items: [Module Federation, OpenAPI, Puppeteer, Camoufox, SSO, Azure AD, Google OAuth]
+    items: [Module Federation, BFF, OpenAPI, Puppeteer, Camoufox, SSO, Azure AD, Google OAuth, JWT]
 
   - group: Languages (spoken)
     items: [Russian — Native, English — C2 (Proficiency)]
@@ -52,87 +53,107 @@ skills:
 experience:
 
   - company: Umbrella Information Security Systems
-    role: Senior Frontend Developer
+    role: Senior Fullstack Developer (Vue.js / Node.js)
     period: Apr 2026 — Present
     description:
       - Migrated UI module from legacy Blazor to Vue 3 SPA, responsible for architecture, backend integration (.NET Aspire microservices) and CI/CD
       - Designed SPA — Vue Router, Pinia, vue-i18n, Tailwind CSS 4 + daisyUI
-      - Type-safe backend integration — TypeScript type generation from OpenAPI contract
-      - Real-time agent monitoring via SignalR, dashboards, config editor on Monaco Editor
-      - GitLab CI (validate → build → test → deploy), coverage up to 80%
-    stack: [Vue 3, TypeScript, Vite, Pinia, Vue Router, Tailwind CSS, daisyUI, SignalR, ApexCharts, Monaco Editor, Vitest, Playwright, GitLab CI, Docker]
+      - Contract-first backend integration — TypeScript type generation from OpenAPI, aligned REST/SignalR contracts with the backend team
+      - Real-time agent monitoring via SignalR, dashboards on ApexCharts, config editor on Monaco Editor
+      - GitLab CI (validate → build → test → deploy), .deb package builds, coverage up to 80%
+    stack: [Vue 3, TypeScript, Node.js, Vite, Pinia, Vue Router, Tailwind CSS, daisyUI, SignalR, ApexCharts, Monaco Editor, OpenAPI, GitLab CI, Docker]
 
   - company: Creative Code
-    role: Senior Frontend Developer (part time)
+    role: Senior Fullstack Developer (part time)
     period: Nov 2025 — Jun 2026
     description:
-      - Outsourcing studio, US clients
-      - Alpha — page builder, auto loan calculator, Sentry
-      - OneVision — AI analytics platform, dashboards, AI summary streaming via SSE
-      - DataFusion — data platform, TanStack Query, server-state management
-      - Scrapers — Node.js/Express + Puppeteer + stealth, Python + Camoufox, 50K records/day
-    stack: [Vue 3, Vuex, Vite, React 18, TypeScript, Redux Toolkit, Tailwind, Chart.js, TanStack Query, Node.js, Puppeteer, Camoufox, Sentry, Docker]
+      - Outsourcing studio for web and AI development, US clients; led frontends and backend services for multiple products
+      - Alpha (charlieobaugh.com) — car dealer platform, JS → TypeScript migration (20K lines), page builder, auto loan calculator, Sentry
+      - OneVision (onevision.ai) — AI platform, Chart.js dashboards, AI summary streaming via Server-Sent Events (SSE)
+      - DataFusion (data-fusion.io) — data platform on Vue 3 + TypeScript, TanStack Query for server state
+      - Scrapers — scraping service on Node.js/Express + Puppeteer + stealth with JWT, rate-limiting and helmet; Python + Camoufox for PerimeterX bypass, 50K records/day
+    stack: [Vue 3, React 18, TypeScript, Node.js, Express, Vite, Redux Toolkit, TanStack Query, Tailwind, Chart.js, Puppeteer, Camoufox, Python, Sentry, Docker]
 
-  - company: ToolSense
-    role: Senior Front-end / Fullstack Developer (Vue.js, Node.js, TypeScript)
-    period: Jun 2021 — May 2023
+  - company: Cointelegraph
+    role: Senior Fullstack Developer (Vue.js / Node.js)
+    period: Dec 2024 — Jan 2026
     description:
-      - IoT asset management platform, international team
-      - Frontend in Vue.js, Backend API in Node.js + TypeScript + GraphQL
-      - PDF report generation, SSO authentication (Azure AD, Google OAuth)
-      - Custom UI Kit, ticket management system, legacy refactoring
-    stack: [Vue.js, TypeScript, Node.js, GraphQL, SSO, Azure AD, Google OAuth, Custom UI Kit]
+      - Maintained and developed a custom CMS for a major media project (~1M monthly visitors)
+      - Real-time collaborative ProseMirror editor, integration of AI image search and AI article translation
+      - Built server-side endpoints and a Node.js BFF layer to aggregate CMS data and external AI services
+      - Maintained cointelegraph.com — legacy (Vue 2 + Nuxt 2) and new version (Vue 3 + Nuxt 3, SSR)
+      - Aligned and specified API contracts with backend (REST API, GraphQL), optimized Core Web Vitals
+    stack: [Vue.js (Vue 2, Vue 3), Nuxt.js (SSR), Node.js, TypeScript, Vuex, Pinia, Tailwind CSS, REST API, GraphQL, FSD]
 
-  - company: Priladnye Technologii LLC
-    role: Frontend Developer / Fullstack Developer
-    period: Jul 2019 — Jun 2021
+  - company: Lotsiya
+    role: Senior Fullstack Developer (Vue.js / Node.js)
+    period: Jul 2024 — Aug 2025
     description:
-      - PrismHR (USA) — tax management web app, React + TypeScript, Node.js + GraphQL, Serverless, AWS, Docker
-      - Internal web app — Outlook-like calendar, Gantt chart, Jira-like task management on Vue.js + Nuxt.js + Vuetify, WebSockets
-    stack: [React, Vue.js, Nuxt.js, TypeScript, Node.js, GraphQL, Vuetify, Serverless, AWS, Docker, WebSockets, Storybook]
+      - Project — autoplatform.ru
+      - Built web application and personal dashboard on Vue 3 + Nuxt 3 + TypeScript
+      - Implemented a Node.js BFF layer to aggregate external and internal REST APIs and optimize interaction with backend services
+      - SSO authentication with JWT (access/refresh tokens), micro-frontend architecture with Module Federation
+      - E2E testing (Playwright), unit tests (Jest), integration tests
+    stack: [Vue 3, Nuxt 3, Node.js, TypeScript, BFF, Module Federation, JWT, SSO, REST API, Playwright, Jest]
 
   - company: MTS (Mobile TeleSystems)
-    role: Lead Frontend Developer
+    role: Lead Fullstack Developer
     period: Apr 2023 — Jun 2024
     description:
       - Project — MTS-Teleport (logistics automation)
       - Maintained and developed a large web application for logistics management
       - Vue 2 → Vue 3 migration, custom UI Kit with Storybook
-      - Backend integration via GraphQL, gRPC, REST API
-    stack: [Vue.js (Vue 2, Vue 3), TypeScript, Vuetify, Custom UI Kit, Storybook, GraphQL, gRPC, REST API, CI/CD]
+      - Integration with backend microservices via GraphQL, gRPC, REST API; participated in API contract design
+      - Set up and maintained CI/CD pipelines, mentored junior developers
+    stack: [Vue.js (Vue 2, Vue 3), TypeScript, Node.js, Vuetify, Custom UI Kit, Storybook, GraphQL, gRPC, REST API, CI/CD]
 
-  - company: Lotsiya
-    role: Senior Frontend Developer (Vue.js, Nuxt)
-    period: Jul 2024 — Aug 2025
+  - company: ToolSense
+    role: Senior Front-end / Fullstack Developer (Vue.js, Node.js, TypeScript)
+    period: Jun 2021 — May 2023
     description:
-      - Project — autoplatform.ru
-      - Vue 3 + Nuxt 3 + TypeScript, SSO authentication (JWT)
-      - Micro-frontend architecture with Module Federation
-      - Integration with external REST APIs, BFF approach
-    stack: [Vue 3, Nuxt 3, TypeScript, Module Federation, JWT, SSO, REST API, Playwright, Jest]
+      - IoT asset management platform, international English-speaking team
+      - Frontend in Vue.js, Backend API in Node.js + TypeScript + GraphQL
+      - Implemented PDF report generation, SSO authentication (Azure AD, Google OAuth)
+      - Custom UI Kit, ticket creation and management system
+      - Legacy architecture refactoring, mentored junior developers
+    stack: [Vue.js, TypeScript, Node.js, GraphQL, PostgreSQL, SSO, Azure AD, Google OAuth, Custom UI Kit]
+
+  - company: Priladnye Technologii LLC
+    role: Frontend Developer / Fullstack Developer
+    period: Jul 2019 — Jun 2021
+    description:
+      - Outsourcing company, commercial projects (including international)
+      - PrismHR (USA) — tax management web app, React + TypeScript frontend, Backend API in Node.js + GraphQL, Serverless architecture on AWS (Lambda), Docker
+      - Internal web app (Outlook-like calendar, Gantt chart, Jira-like task tracker) on Vue.js + Nuxt.js + Vuetify, real-time via WebSockets
+      - Built and evolved a custom UI Kit, documented in Storybook
+    stack: [React, Vue.js, Nuxt.js, TypeScript, Node.js, GraphQL, Serverless, AWS, Docker, WebSockets, Storybook]
 
   - company: Tsifrovoy Element LLC
-    role: Frontend Developer
+    role: Frontend / Fullstack Developer
     period: Mar 2018 — Jul 2019
     description:
       - Digital agency, client and internal web projects
-      - Built and maintained web applications, personal dashboards
-    stack: [JavaScript (ES6), Vue.js, HTML, CSS, PostCSS, Gulp, Webpack]
+      - Built and maintained web applications and websites, personal dashboards
+      - Integration with backend and external APIs, server-side templating on Node.js (EJS)
+    stack: [JavaScript (ES6), Vue.js, Node.js, HTML, CSS, EJS, PostCSS, Gulp, Webpack]
 
   - company: insite-it
-    role: Web Developer / Frontend Developer
+    role: Web Developer / Fullstack Developer
     period: Aug 2016 — Mar 2018
     description:
-      - Online table booking system for Galaxy Club — drag & drop interface
-      - XML parsers and web scrapers (Nightmare.js)
-    stack: [Vue.js, JavaScript (ES6), HTML, CSS, PHP, Netcat, Nightmare.js]
+      - Online table booking system for Galaxy Club — drag & drop Vue.js interface plus server-side logic and admin panel
+      - Built XML parsers and web scrapers (Nightmare.js) for data integration
+      - Backend in PHP, integration with CMS Netcat, responsive cross-browser development
+    stack: [Vue.js, JavaScript (ES6), PHP, Node.js, HTML, CSS, Netcat, Nightmare.js]
 
   - company: Upwork / byrocketscience
-    role: Web Developer
+    role: Web Developer (Fullstack)
     period: Jan 2015 — Dec 2017
     description:
-      - Freelance — built websites for international clients
-    stack: [Ruby on Rails, PHP, Symfony, WordPress, WooCommerce, OpenCart, Jekyll, JavaScript, jQuery]
+      - Freelance — fullstack web development for international clients
+      - Backend in Ruby on Rails, PHP, Symfony; frontend in JavaScript, jQuery
+      - CMS and e-commerce — WordPress, WooCommerce, OpenCart, static sites on Jekyll
+    stack: [Ruby on Rails, PHP, Symfony, JavaScript, jQuery, WordPress, WooCommerce, OpenCart, Jekyll]
 
 education:
   - institution: South Ural State University (National Research University)

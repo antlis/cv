@@ -1,10 +1,10 @@
 profiles:
   - id: default
-    label: "Generalist"
+    label: "Frontend Vue"
     slug: ""
     spec: null
   - id: react
-    label: "React"
+    label: "Frontend React"
     slug: "react"
     spec: react
   - id: fullstack

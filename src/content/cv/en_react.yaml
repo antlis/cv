@@ -3,48 +3,49 @@ title: Senior Front-end Developer (React / Next.js)
 
 summary: >
   Frontend developer with 11+ years of experience, specializing in React and Next.js.
-  Built AI platforms, page builders, dashboards, and SPA applications.
-  Experience with SSR/SSG, state management (Redux Toolkit, Zustand), testing,
-  and CI/CD. Full cycle — from architecture to deployment.
+  Built AI platforms, page builders, dashboards, and SPA applications,
+  migrated legacy interfaces to modern React 18 + TypeScript.
+  Experience with SSR/SSG, state management (Redux Toolkit, Zustand, TanStack Query),
+  testing, and CI/CD. Full cycle — from architecture to deployment.
 
 achievements:
+  - Migrated a legacy interface to React 18 + TypeScript SPA — ~30 screens with zero product downtime
   - JS → TypeScript migration (20K lines), reduced runtime bugs by 30%
   - AI analytics platform with Chart.js dashboards and AI summary streaming via SSE
-  - Page builder for car dealers with auto loan calculator
-  - Optimized Core Web Vitals for site with ~1M monthly visitors
-  - Test coverage with Vitest + React Testing Library + Playwright up to 80%
-  - PrismHR web app — React + TypeScript + Node.js + GraphQL + Serverless
+  - Page builder for car dealers and auto loan calculator on Next.js
+  - Optimized Core Web Vitals for a site with ~1M monthly visitors
+  - PrismHR web app — React + TypeScript + Node.js + GraphQL + Serverless + AWS
 
 skills:
   - group: React / Next.js
-    items: [React, Next.js, React 18, SSR, SSG, React Server Components]
+    items: [React (React 16–18), Next.js (App Router, Pages Router), SSR, SSG, React Server Components, React Router]
 
   - group: State Management
-    items: [Redux Toolkit, Zustand, TanStack Query]
+    items: [Redux Toolkit, Zustand, TanStack Query, Jotai]
 
   - group: TypeScript / JS
     items: [TypeScript, JavaScript (ES6+)]
 
   - group: UI / Styling
-    items: [Tailwind CSS, daisyUI, shadcn/ui, Chart.js]
+    items: [Tailwind CSS, shadcn/ui, MUI, daisyUI, Chart.js, ApexCharts]
+
+  - group: Forms / Validation
+    items: [react-hook-form, zod, Formik]
 
   - group: Testing
     items: [Vitest, React Testing Library, Playwright, Jest]
 
   - group: API
-    items: [REST API, GraphQL, WebSocket, Serverless]
+    items: [REST API, GraphQL, WebSocket, SignalR, Serverless]
 
   - group: Tools
-    items: [Vite, Webpack, ESLint, Prettier, Husky, Git]
+    items: [Vite, Webpack, Turbopack, ESLint, Prettier, Husky, Git]
 
   - group: CI/CD
-    items: [GitHub Actions, GitLab CI, Docker]
-
-  - group: Monitoring
-    items: [Sentry, Sentry Profiling]
+    items: [GitHub Actions, GitLab CI, Docker, Vercel]
 
   - group: Other
-    items: [Storybook, Module Federation, Puppeteer, Camoufox]
+    items: [Monaco Editor, ProseMirror, react-i18next, Storybook, Module Federation, OpenAPI, Sentry, Puppeteer, Camoufox]
 
   - group: Languages (spoken)
     items: [Russian — Native, English — C2 (Proficiency)]
@@ -52,73 +53,104 @@ skills:
 experience:
 
   - company: Umbrella Information Security Systems
-    role: Senior Frontend Developer
+    role: Senior Frontend Developer (React)
     period: Apr 2026 — Present
     description:
-      - Migrated UI module from legacy Blazor to modern Vue 3 SPA, responsible for frontend architecture, backend integration and CI/CD
-      - Designed SPA architecture — Vue Router, Pinia, vue-i18n, design system on Tailwind CSS 4 + daisyUI
-      - Set up type-safe backend integration, TypeScript type generation from OpenAPI contract
-      - Real-time agent monitoring via SignalR, interactive dashboards on ApexCharts
-      - Quality gates — ESLint + Prettier + Husky/lint-staged, coverage up to 80%
-    stack: [Vue 3, TypeScript, Vite, Pinia, Vue Router, Tailwind CSS, daisyUI, SignalR, Vitest, Playwright, GitLab CI, Docker]
+      - Migrated UI module from legacy Blazor to modern React 18 + TypeScript SPA, responsible for frontend architecture, backend integration and CI/CD
+      - Designed SPA architecture — React Router, Redux Toolkit, react-i18next, design system on Tailwind CSS 4 + shadcn/ui
+      - Set up type-safe backend integration, TypeScript type and hook generation from OpenAPI contract (openapi-typescript + orval)
+      - Real-time agent monitoring via SignalR, interactive dashboards on ApexCharts, config/rule editor on Monaco Editor
+      - Form validation with react-hook-form + zod, JWT authentication
+      - Quality gates — ESLint + Prettier + Husky/lint-staged, unit tests with Vitest + React Testing Library, e2e with Playwright, coverage up to 80%
+    stack: [React 18, TypeScript, Vite, Redux Toolkit, React Router, react-i18next, Tailwind CSS, shadcn/ui, SignalR, ApexCharts, Monaco Editor, react-hook-form, zod, Vitest, Playwright, GitLab CI, Docker]
 
   - company: Creative Code
-    role: Senior Frontend Developer (part time)
+    role: Senior Frontend Developer (React, part time)
     period: Nov 2025 — Jun 2026
     description:
-      - Outsourcing studio for web and AI development, US clients
-      - Alpha (charlieobaugh.com) — car dealer platform, JS → TypeScript migration (20K lines), page builder, auto loan calculator, Sentry
+      - Outsourcing studio for web and AI development, US clients, led frontends for multiple products in parallel
+      - Alpha (charlieobaugh.com) — car dealer platform on Next.js 15 + React 18, JS → TypeScript migration (20K lines), page builder, auto loan calculator, Sentry
       - OneVision (onevision.ai) — AI analytics platform, Chart.js dashboards, drag-and-drop widget builder, AI summary streaming via SSE
-      - DataFusion (data-fusion.io) — data platform, Vue 3 + TypeScript, TanStack Query for server state
-      - Scrapers — web scraping service, Node.js/Express + Puppeteer + stealth, Python + Camoufox, 50K records/day
-    stack: [Vue 3, Vuex, Vite, React 18, TypeScript, Redux Toolkit, Tailwind, Chart.js, TanStack Query, Puppeteer, Camoufox, Sentry, Docker]
+      - DataFusion (data-fusion.io) — data platform on React + TypeScript, TanStack Query for server state, 50% faster list loading via caching
+      - Scrapers — web scraping service, Node.js/Express + Puppeteer + stealth, Python + Camoufox for PerimeterX bypass, 50K records/day
+    stack: [Next.js 15, React 18, TypeScript, Redux Toolkit, Zustand, TanStack Query, Tailwind, Chart.js, Node.js, Puppeteer, Camoufox, Sentry, Docker]
 
   - company: Cointelegraph
-    role: Senior Frontend Developer (Vue.js, Nuxt)
+    role: Senior Frontend Developer (React, Next.js)
     period: Dec 2024 — Jan 2026
     description:
-      - Maintained and developed features for a custom CMS for a major media project (~1M monthly visitors)
+      - Maintained and developed features for a custom CMS for a major media project
+      - Worked with real-time collaborative editor ProseMirror, custom plugins, UX optimization
       - Integrated AI image search/thumbnails and AI article translation
-      - Maintained cointelegraph.com — legacy (Vue 2 + Nuxt 2) and new version (Vue 3 + Nuxt 3)
-      - Redesigned and optimized pages, Core Web Vitals, TTI, LCP
-    stack: [Vue.js (Vue 2, Vue 3), Nuxt.js (Nuxt 2, Nuxt 3), TypeScript, Vuex, Pinia, Tailwind CSS, Vite, REST API, GraphQL]
+      - Maintained cointelegraph.com — legacy (React 16 + CRA) and new version (React 18 + Next.js)
+      - Redesigned and optimized pages (~1M monthly visitors), Core Web Vitals, TTI, LCP
+      - Integrated advertising solutions (banners, custom ad blocks, third-party providers)
+      - API contract alignment with backend (REST API, GraphQL), sprint planning and code review
+    stack: [React (React 16, React 18), Next.js, TypeScript, Redux Toolkit, Zustand, Tailwind CSS, Vite, REST API, GraphQL, FSD]
 
   - company: Lotsiya
-    role: Senior Frontend Developer (Vue.js, Nuxt)
+    role: Senior Frontend Developer (React, Next.js)
     period: Jul 2024 — Aug 2025
     description:
       - Project — autoplatform.ru
-      - Built web application and personal dashboard on Vue 3 + Nuxt 3 + TypeScript
+      - Built web application and personal dashboard on React 18 + Next.js + TypeScript
+      - SSO authentication with JWT (access/refresh tokens)
       - Micro-frontend architecture with Module Federation
       - Integration with multiple external and internal REST APIs, BFF approach
-    stack: [Vue 3, Nuxt 3, TypeScript, Module Federation, JWT, SSO, REST API, Playwright, Jest]
+      - E2E testing (Playwright), unit tests (Jest), integration tests
+    stack: [React 18, Next.js, TypeScript, Module Federation, JWT, SSO, REST API, Playwright, Jest]
+
+  - company: MTS (Mobile TeleSystems)
+    role: Lead Frontend Developer (React)
+    period: Apr 2023 — Jun 2024
+    description:
+      - Project — MTS-Teleport (logistics automation)
+      - Maintained and developed a large web application for managing logistics processes
+      - Migrated legacy class components to modern React (hooks, function components), reduced technical debt
+      - Built custom UI Kit with Storybook documentation
+      - Backend integration via GraphQL, gRPC, REST API
+      - CI/CD pipelines, mentored junior developers, conducted code reviews
+    stack: [React, TypeScript, MUI, Custom UI Kit, Storybook, GraphQL, gRPC, REST API, CI/CD]
+
+  - company: ToolSense
+    role: Senior Front-end Developer (React, TypeScript)
+    period: Jun 2021 — May 2023
+    description:
+      - IoT asset management platform, international English-speaking team
+      - Frontend in React + TypeScript, integration with GraphQL API
+      - PDF report generation, SSO authentication (Azure AD, Google OAuth)
+      - Custom UI Kit, ticket management system
+      - Legacy architecture refactoring, mentored junior developers
+    stack: [React, TypeScript, GraphQL, Redux Toolkit, SSO, Azure AD, Google OAuth, Custom UI Kit]
 
   - company: Priladnye Technologii LLC
-    role: Frontend Developer / Fullstack Developer
+    role: Frontend Developer / Fullstack Developer (React)
     period: Jul 2019 — Jun 2021
     description:
+      - Outsourcing company, worked on multiple commercial projects (including international)
       - PrismHR (USA) — tax management web app, React + TypeScript, Node.js + GraphQL, Serverless, AWS, Docker
       - Applied Technologies corporate website — full-cycle development
-      - Internal web app (Outlook-like calendar, Gantt chart, Jira-like task management) on Vue.js + Nuxt.js
-    stack: [React, Vue.js, Nuxt.js, TypeScript, Node.js, GraphQL, Vuetify, Serverless, AWS, Docker, WebSockets, Storybook]
+      - Internal web app (Outlook-like calendar, Gantt chart, Jira-like task management) on React + Next.js, WebSockets
+    stack: [React, Next.js, TypeScript, Node.js, GraphQL, Serverless, AWS, Docker, WebSockets, Storybook]
 
   - company: Tsifrovoy Element LLC
-    role: Frontend Developer
+    role: Frontend Developer (React)
     period: Mar 2018 — Jul 2019
     description:
-      - Digital agency, client and internal web projects
-      - Built and maintained web applications and websites, personal dashboards
-      - Redesigned and modernized existing sites
-    stack: [JavaScript (ES6), Vue.js, HTML, CSS, PostCSS, Gulp, Webpack]
+      - Digital agency, worked on client and internal web projects
+      - Built and maintained React web applications and websites, personal dashboards
+      - Redesigned and modernized existing sites, responsive development
+      - Projects — ustekchel.ru, Elmerck, DIJEANS, welltechs.ru
+    stack: [React, JavaScript (ES6), TypeScript, HTML, CSS, PostCSS, Webpack]
 
   - company: insite-it
-    role: Web Developer / Frontend Developer
+    role: Web Developer / Frontend Developer (React)
     period: Aug 2016 — Mar 2018
     description:
-      - Online table booking system for Galaxy Club — drag & drop interface
-      - XML parsers and web scrapers (Nightmare.js)
-      - Responsive cross-browser development
-    stack: [Vue.js, JavaScript (ES6), HTML, CSS, PHP, Netcat, Nightmare.js]
+      - Online table booking system for Galaxy Club — drag & drop React interface, editable event schedule
+      - XML parsers and web scrapers (Nightmare.js) for data integration
+      - Responsive cross-browser development, interactive React interfaces
+    stack: [React, JavaScript (ES6), HTML, CSS, PHP, Netcat, Nightmare.js]
 
   - company: Upwork / byrocketscience
     role: Web Developer
@@ -126,7 +158,8 @@ experience:
     description:
       - Freelance — built websites for international clients
       - Ruby on Rails, PHP, Symfony, WordPress, WooCommerce, OpenCart, Jekyll
-    stack: [Ruby on Rails, PHP, Symfony, WordPress, WooCommerce, OpenCart, Jekyll, JavaScript, jQuery]
+      - Early projects with JavaScript, jQuery, and early React
+    stack: [JavaScript, jQuery, React, Ruby on Rails, PHP, Symfony, WordPress, WooCommerce, OpenCart, Jekyll]
 
 education:
   - institution: South Ural State University (National Research University)
