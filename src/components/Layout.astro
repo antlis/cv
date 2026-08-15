@@ -103,13 +103,20 @@ const authorGitHubPage = 'https://github.com/KeeGooRoomiE/';
     <meta name="twitter:image" content={metaImage} />
 
     <ThemeScript />
+
+    <!-- Navigation is hidden by default; ?menu=true reveals the full nav. -->
+    <script is:inline>
+      if (new URLSearchParams(window.location.search).get('menu') === 'true') {
+        document.documentElement.setAttribute('data-menu', 'true');
+      }
+    </script>
   </head>
   <body>
     <a class="skip-link" href="#main-content">Skip to content</a>
 
     <header>
       <nav>
-        <a href={homeHref} class="logo" aria-label="Home">
+        <a href="https://antlis.is-a.dev/" class="logo" aria-label="antlis.is-a.dev">
           <img src="/logo.svg" width="48" height="48" alt="Logo" style="object-fit: contain;" />
         </a>
 

@@ -38,6 +38,24 @@ const pageTitle = data?.title ? `${displayName} — ${data.title}` : displayName
 const metaDescription = (data?.summary ?? '').replace(/\s+/g, ' ').trim() || undefined;
 
 const contacts     = Array.isArray(data?.contacts)    ? data.contacts    : [];
+
+// Map a contact to a brand icon (simple-icons CDN, same set as the footer).
+// Detection is URL-first so it survives label translations; unknown links
+// (Website, CV) fall back to a generic globe drawn inline.
+const SI = (slug) => `https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/${slug}.svg`;
+function contactMeta(url = '', label = '') {
+  const u = String(url).toLowerCase();
+  const l = String(label).toLowerCase();
+  if (u.startsWith('mailto:'))                                return { icon: SI('protonmail'),    brand: 'email' };
+  if (u.includes('t.me') || l.includes('telegram'))           return { icon: SI('telegram'),      brand: 'telegram' };
+  if (u.includes('github.com'))                               return { icon: SI('github'),        brand: 'github' };
+  if (u.includes('gitlab.com'))                               return { icon: SI('gitlab'),        brand: 'gitlab' };
+  if (u.includes('linkedin.com'))                             return { icon: SI('linkedin'),      brand: 'linkedin' };
+  if (u.includes('stackoverflow.com'))                        return { icon: SI('stackoverflow'), brand: 'stackoverflow' };
+  if (u.includes('upwork') || l.includes('upwork') || u.includes('goo.gl')) return { icon: SI('upwork'), brand: 'upwork' };
+  if (u.includes('drive.google') || l.includes('рекоменд') || l.includes('reference')) return { icon: SI('googledrive'), brand: 'reference' };
+  return { icon: null, brand: 'website' };
+}
 const rawSkills    = Array.isArray(data?.skills)      ? data.skills      : [];
 const experience   = Array.isArray(data?.experience)  ? data.experience  : [];
 const achievements = Array.isArray(data?.achievements)? data.achievements: [];
@@ -117,17 +135,31 @@ const skillGroups = rawSkills
           {contacts.length > 0 && (
             <div class="hero__contacts">
               <div class="section__title">{t.contacts}</div>
-              <div class="pillrow">
-                {contacts.map((c) => (
-                  <a
-                    class="pill"
-                    href={c.url}
-                    target={c.url?.startsWith('mailto:') ? undefined : '_blank'}
-                    rel={c.url?.startsWith('mailto:')    ? undefined : 'noopener'}
-                  >
-                    {c.label}
-                  </a>
-                ))}
+              <div class="contactrow">
+                {contacts.map((c) => {
+                  const m = contactMeta(c.url, c.label);
+                  return (
+                    <a
+                      class="contact"
+                      href={c.url}
+                      data-brand={m.brand}
+                      aria-label={c.label}
+                      target={c.url?.startsWith('mailto:') ? undefined : '_blank'}
+                      rel={c.url?.startsWith('mailto:')    ? undefined : 'noopener'}
+                    >
+                      {m.icon ? (
+                        <img class="contact__icon" src={m.icon} alt="" width="18" height="18" loading="lazy" />
+                      ) : (
+                        <svg class="contact__icon contact__icon--svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                          <circle cx="12" cy="12" r="10" />
+                          <path d="M2 12h20" />
+                          <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+                        </svg>
+                      )}
+                      <span>{c.label}</span>
+                    </a>
+                  );
+                })}
               </div>
             </div>
           )}

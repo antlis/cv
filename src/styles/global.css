@@ -180,9 +180,14 @@ nav {
   align-items: center;
 }
 
+/* Navigation is hidden by default; ?menu=true (sets data-menu) reveals it. */
 .nav-links {
-  display: flex;
+  display: none;
   gap: 2rem;
+}
+
+:root[data-menu='true'] .nav-links {
+  display: flex;
 }
 
 .nav-links a,
@@ -333,7 +338,7 @@ nav {
     justify-content: flex-start;
   }
 
-  .nav-links {
+  :root[data-menu='true'] .nav-links {
     display: none;
   }
 
@@ -342,7 +347,7 @@ nav {
     gap: 0.75rem;
   }
 
-  .menu-toggle {
+  :root[data-menu='true'] .menu-toggle {
     display: flex;
     align-items: center;
   }
@@ -783,6 +788,50 @@ nav {
   background: var(--card-hover);
   text-decoration: none;
   transform: translateY(-1px);
+}
+
+/* Contacts (hero) — brand icon + label buttons */
+.contactrow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.contact {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  border-radius: var(--r-pill);
+  border: 1px solid var(--border);
+  background: var(--card-bg);
+  color: var(--text);
+  text-decoration: none;
+  transition: background var(--t), border-color var(--t), transform var(--t);
+}
+
+.contact:hover {
+  border-color: color-mix(in srgb, var(--accent) 24%, var(--border));
+  background: var(--card-hover);
+  text-decoration: none;
+  transform: translateY(-1px);
+}
+
+.contact__icon {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+/* Monochrome simple-icons SVGs: tint to text color per theme (like the footer) */
+.contact img.contact__icon {
+  filter: brightness(0);
+  transition: filter var(--t);
+}
+
+html.dark .contact img.contact__icon {
+  filter: brightness(0) invert(1);
 }
 
 .tags {
