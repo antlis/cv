@@ -7,15 +7,9 @@
 //  @spartan121
 //
 import '../styles/global.css';
-import AnimatedBackground from './AnimatedBackground.astro';
 import { getEntry } from 'astro:content';
 import { makeT } from '../scripts/t';
-
-// Change theme here
-//
-//import '../styles/themes/vscode.css';
-//
-// Change theme here
+import { ThemeScript, Toggle } from 'astro-theme-toggle/components';
 
 const {
   title = 'CV Hub',
@@ -107,27 +101,18 @@ const authorGitHubPage = 'https://github.com/KeeGooRoomiE/';
     <meta name="twitter:description" content={metaDescription} />
     <meta name="twitter:image" content={metaImage} />
 
-    <script is:inline>
-      const params = new URLSearchParams(window.location.search);
-      const theme = params.get('theme');
-      const allowed = ['frosted', 'light', 'nordic', 'peachy'];
-      if (theme && allowed.includes(theme)) {
-        const link = document.createElement('link');
-        link.rel = 'stylesheet';
-        link.href = `${document.documentElement.dataset.base}/themes/${theme}.css`;
-        document.addEventListener('DOMContentLoaded', () => {
-          document.head.appendChild(link);
-        });
-      }
-    </script>
+    <ThemeScript />
   </head>
   <body>
-    <AnimatedBackground />
-    <header class="header">
-      <div class="container header__row">
-        <a class="brand" href={homeHref}>CV Hub</a>
+    <a class="skip-link" href="#main-content">Skip to content</a>
 
-        <nav class="nav">
+    <header>
+      <nav>
+        <a href={homeHref} class="logo" aria-label="Home">
+          <img src="/logo.svg" width="48" height="48" alt="Logo" style="object-fit: contain;" />
+        </a>
+
+        <div class="nav-links">
           <a href={homeHref}>{t('nav.home')}</a>
 
           {profileLinks.length > 1 && (
@@ -154,24 +139,49 @@ const authorGitHubPage = 'https://github.com/KeeGooRoomiE/';
           )}
 
           <a href={showcaseHref}>{t('nav.showcase')}</a>
-        </nav>
+        </div>
 
-        <div class="lang">
-          {langLinks.map(l => (
-            <a class={l.active ? 'active' : ''} href={l.href}>{l.label}</a>
+        <div class="nav-end">
+          <div class="lang-switcher">
+            {langLinks.map((l, i) => (
+              <>
+                {i > 0 && <span class="sep">/</span>}
+                <a class={l.active ? 'active' : ''} href={l.href}>{l.label}</a>
+              </>
+            ))}
+          </div>
+          <span class="theme-toggle-wrap"><Toggle /></span>
+          <button class="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+            <span class="hamburger"></span>
+          </button>
+        </div>
+      </nav>
+
+      <div class="mobile-menu" id="mobile-menu" aria-hidden="true" inert>
+        <div class="mobile-links">
+          <a href={homeHref}>{t('nav.home')}</a>
+          {profileLinks.length > 1 && profileLinks.map(p => (
+            <a href={p.href} class:list={{ active: p.active }}>{p.label}</a>
           ))}
+          <a href={showcaseHref}>{t('nav.showcase')}</a>
+          <div class="mobile-lang">
+            {langLinks.map((l, i) => (
+              <>
+                {i > 0 && <span class="sep">/</span>}
+                <a class={l.active ? 'active' : ''} href={l.href}>{l.label}</a>
+              </>
+            ))}
+          </div>
         </div>
       </div>
     </header>
 
-    <main>
+    <main id="main-content" tabindex="-1">
       <slot />
     </main>
 
     <script>
       // Dropdown: click-toggle + click-outside to close.
-      // Pure CSS :hover закрывает меню при малейшем выходе курсора за контейнер.
-      // Sync aria-expanded with open state for screen readers.
       const setExpanded = (dropdown: Element, open: boolean) => {
         dropdown.querySelector('.dropdown__trigger')?.setAttribute('aria-expanded', String(open));
       };
@@ -198,20 +208,76 @@ const authorGitHubPage = 'https://github.com/KeeGooRoomiE/';
         });
       });
 
-      // Клик вне любого дропдауна — закрываем все
       document.addEventListener('click', () => closeAll());
 
-      // Escape — закрываем все и возвращаем фокус на триггер
       document.addEventListener('keydown', e => {
         if (e.key !== 'Escape') return;
         const open = document.querySelector<HTMLElement>('.dropdown.is-open .dropdown__trigger');
         closeAll();
         open?.focus();
       });
+
+      // Mobile menu
+      function initMobileMenu() {
+        const toggle = document.querySelector<HTMLButtonElement>('.menu-toggle');
+        const menu = document.querySelector<HTMLElement>('.mobile-menu');
+        if (!toggle || !menu) return;
+        if (toggle.dataset.menuReady === 'true') return;
+        toggle.dataset.menuReady = 'true';
+
+        const openLabel = toggle.getAttribute('aria-label') || 'Open menu';
+        const closeLabel = openLabel === 'Открыть меню' ? 'Закрыть меню' : 'Close menu';
+
+        function setMenuOpen(open: boolean) {
+          toggle.setAttribute('aria-expanded', String(open));
+          toggle.setAttribute('aria-label', open ? closeLabel : openLabel);
+          menu.setAttribute('aria-hidden', String(!open));
+          menu.toggleAttribute('inert', !open);
+          menu.classList.toggle('open', open);
+        }
+
+        toggle.addEventListener('click', () => {
+          const expanded = toggle.getAttribute('aria-expanded') === 'true';
+          setMenuOpen(!expanded);
+        });
+
+        menu.querySelectorAll('a').forEach(link => {
+          link.addEventListener('click', () => setMenuOpen(false));
+        });
+
+        document.addEventListener('keydown', (e: KeyboardEvent) => {
+          if (e.key !== 'Escape' || toggle.getAttribute('aria-expanded') !== 'true') return;
+          setMenuOpen(false);
+          toggle.focus();
+        });
+      }
+
+      initMobileMenu();
     </script>
 
     <footer class="footer">
-      <div class="container footer__inner">
+      <div class="footer__inner">
+        <small class="footer-copyright">&copy; {new Date().getFullYear()} antlis</small>
+        <div class="footer-actions">
+          <a href="mailto:antlis@protonmail.com" target="_blank" rel="noopener" aria-label="Email" data-brand="email">
+            <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/protonmail.svg" alt="Email" width="20" height="20" />
+          </a>
+          <a href="https://github.com/antlis" target="_blank" rel="noopener" aria-label="GitHub" data-brand="github">
+            <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/github.svg" alt="GitHub" width="20" height="20" />
+          </a>
+          <a href="https://gitlab.com/antlis" target="_blank" rel="noopener" aria-label="GitLab" data-brand="gitlab">
+            <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/gitlab.svg" alt="GitLab" width="20" height="20" />
+          </a>
+          <a href="https://www.linkedin.com/in/antlis/" target="_blank" rel="noopener" aria-label="LinkedIn" data-brand="linkedin">
+            <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linkedin.svg" alt="LinkedIn" width="20" height="20" />
+          </a>
+          <a href="https://t.me/Balkon1111" target="_blank" rel="noopener" aria-label="Telegram" data-brand="telegram">
+            <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/telegram.svg" alt="Telegram" width="20" height="20" />
+          </a>
+          <a href="https://stackoverflow.com/users/2983061/antlis" target="_blank" rel="noopener" aria-label="StackOverflow" data-brand="stackoverflow">
+            <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/stackoverflow.svg" alt="StackOverflow" width="20" height="20" />
+          </a>
+        </div>
       </div>
     </footer>
   </body>

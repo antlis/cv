@@ -19,6 +19,7 @@
     "ajv": "^8.18.0",
     "ajv-formats": "^3.0.1",
     "astro": "^5.17.1",
+    "astro-theme-toggle": "^0.8.1",
     "docx": "^9.5.0",
     "hast-util-parse-selector": "^4.0.0",
     "unpdf": "^1.4.0",
